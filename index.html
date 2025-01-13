@@ -58,9 +58,15 @@
     <section>
         <h2>Projects</h2>
         <ul>
-            <li><strong>Sparse Matrix Optimization</strong>: <a href="https://github.com/cecnyb/sparse-matrix-optimization">View on GitHub</a>  
-            Optimized sparse matrix operations using MinkowskiEngine and Bayesian Optimization.</li>
+            <li>
+                <strong>Sparse Matrix Optimization with Meta-Learning</strong>: 
+                <a href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM.git">View on GitHub</a> | 
+                <a href="https://example.com/article">Read the Article</a><br>
+                This project builds on the WACO (Workload-Aware Co-Optimization) model by integrating meta-learning into the training loop to address its limitations. WACO optimizes storage and scheduling to significantly speed up sparse matrix operations, but its performance declines on new hardware due to hardware-dependent labels. Re-training the model on new hardware is costly, limiting its practical usability.
             
+                By incorporating meta-learning, this project reduces the re-training time required for adapting WACO to a new machine. The enhanced model achieves strong performance using minimal data: when retrained on just 300 data points, the meta-learning-enhanced WACO outperformed the original WACO model on data from a new machine.
+                 
+            </li>
             <li><strong>Melanoma Detection</strong>: <a href="https://github.com/cecnyb/melanoma-detection">View on GitHub</a>  
             Built a CNN for detecting melanoma from skin images.</li>
         </ul>
