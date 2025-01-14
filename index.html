@@ -10,24 +10,42 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
         header {
+            position: absolute; /* Fixed to stay at the top */
+            width: 100%;
+            height: 100px; /* Adjust height to match your header content */
+            top: 0;
+            left: 0;
             background: #333;
             color: #fff;
             padding: 20px 0;
             text-align: center;
+            z-index: 10;
+        }
+        section:first-of-type {
+            margin-top: 120px; /* Adds space only to the first section */
         }
         section {
+            position: relative;
             padding: 20px;
             max-width: 800px;
-            margin: 0 auto;
+            margin: auto;
+           
         }
         footer {
-            text-align: center;
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-        }
+        position: fixed; /* Keeps the footer fixed to the bottom */
+        bottom: 0; /* Aligns the footer at the bottom of the viewport */
+        left: 0;
+        width: 100%; /* Spans the full width of the page */
+        text-align: center;
+        background: #fff; /* Background color */
+        color: #333; /* Text color */
+        padding: 0px 0;
+        font-size: 0.9em;
+        z-index: 1000; /* Ensures it stays on top of other content */
+    }
         a {
             color: #007BFF;
             text-decoration: none;
@@ -35,9 +53,71 @@
         a:hover {
             text-decoration: underline;
         }
-    </style>
+
+        nav {
+        position: absolute;
+        top: 130px; /* Adjust this based on the height of your header */
+        left: 0;
+        height: calc(100vh - 0px); /* Reduce height by the header height */
+        width: 180px;
+        background: #fff;
+        padding: 20px;
+        border-right: 1px solid #ccc;
+        overflow-y: auto;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 10px 0;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        body {
+            margin-left: 220px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+</style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav>
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li>
+                <a href="#projects" onclick="toggleProjects(event)">Selected Projects</a>
+                <ul id="projects-list" style="display: none; padding-left: 20px;">
+                    <li><a href="#project1">Sparse Matrix Optimization</a></li>
+                    <li><a href="#project2">Detection of Melanoma</a></li>
+                    <li><a href="#project3">Advanced RAG for Financial QA</a></li>
+                    <li><a href="#project4">Question Answering RAG Model</a></li>
+                    <li><a href="#project5">Topic Modeling Using LDA</a></li>
+                    <!-- Add more projects as needed -->
+                </ul>
+            </li>
+            <li><a href="#thesis">Bachelor's Thesis</a></li>
+            <li><a href="#additional">Additional</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
+    <script>
+        function toggleProjects(event) {
+            event.preventDefault();
+            const projectList = document.getElementById('projects-list');
+            projectList.style.display = projectList.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+    <!-- Header Section -->
     <header style="display: flex; align-items: center; justify-content: center; gap: 80px; padding: 10px;">
         <!-- Header Text -->
         <div>
@@ -49,7 +129,7 @@
         <img src="images/profile.jpg" alt="Cecilia Nyberg Profile Picture" style="width:100px; height:110px; border-radius:50%;">
     </header>
     
-    <section>
+    <section id="about">
         <h2>About Me</h2>
         <p>Hello! I'm Cecilia Nyberg, a last-year graduate student in Data Science and AI. My primary interest lies in deep artificial intelligence and improving the practical usability of complex, computationally expensive models. I enjoy solving challenging problems and developing innovative solutions in AI.</p>
         <p>With a bachelor's degree in industrial engineering and management, I also have an interest in financial analysis and exploring how AI and data science can optimize business profitability and decision-making.</p>
@@ -60,7 +140,7 @@
         </p>
     </section>
     
-    <section>
+    <section id="projects">
         <h2>Selected Projects</h2>
         <ul>
             <li>
@@ -179,7 +259,7 @@
         </ul>
     </section>
 
-    <section>
+    <section id="thesis">
         <h2>Bachelor's thesis</h2>
         <ul>
             <li>
@@ -193,7 +273,7 @@
         </ul>
     </section>
     
-    <section>
+    <section id="additional">
         <h2>Additional</h2>
         <ul>
             <li>
@@ -217,14 +297,14 @@
         </ul>
     </section>
 
-    <section>
+    <section id="certificates">
         <h2>Certificates</h2>
         <strong>Certificate of Excellence in Korean Language Program</strong>
             <a href="https://cecnyb.github.io/certificates/Certificate_of_excellence_korean.pdf" target="_blank">Certificate</a> 
         
     </section>
     
-    <section>
+    <section id="skills">
         <h2>Skills</h2>
         <p>Python, TensorFlow, PyTorch, Keras, CNN, DNN, LLM, Meta learning, Data Visualization.</p>
     </section>
@@ -232,7 +312,7 @@
 
     
     <footer>
-        <p>Contact: <a href="mailto:cecilia@example.com">cecilia@example.com</a> | <a href="https://linkedin.com/in/cecnyb">LinkedIn</a> | <a href="https://github.com/cecnyb">GitHub</a></p>
+        <p>Contact: <a href="mailto:cecilia.nyberg@hotmail.se">cecilia.nyberg@hotmail.se</a> | <a> +46705200388 </a> </p>
     </footer>
 </body>
 </html>
