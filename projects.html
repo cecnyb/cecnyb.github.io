@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Cecilia Nyberg</title>
+  <link rel="stylesheet" href="styles_project.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Projects Content -->
+  <main>
+    <section id="projects">
+      <h1>Selected Projects</h1>
+      <div class="project-container">
+        <div class="project">
+          <h2>Sparse Matrix Optimization with Meta-Learning</h2>
+          <p>
+            This project builds on the WACO (Workload-Aware Co-Optimization) model by integrating meta-learning into the training loop to address its limitations. WACO optimizes storage and scheduling to significantly speed up sparse matrix operations, but its performance declines on new hardware due to hardware-dependent labels. Re-training the model on new hardware is costly, limiting its practical usability.
+          </p>
+          <p>
+            By incorporating meta-learning, this project reduces the re-training time required for adapting WACO to a new machine. The enhanced model achieves strong performance using minimal data: when retrained on just 300 data points, the meta-learning-enhanced WACO outperformed the original WACO model on data from a new machine.
+          </p>
+          <a href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM.git" target="_blank">View on GitHub</a> |
+          <a href="https://cecnyb.github.io/articles/WACO_WITH_META_LEARNING.pdf" target="_blank">Read Article</a>
+        </div>
+        <hr>
+        <div class="project">
+          <h2>Detection of Melanoma in Images</h2>
+          <p>
+            A convolutional neural network (CNN) was developed to detect melanoma in images of birthmarks. Several approaches were evaluated, and the best performing model used transfer learning by fine-tuning the ConvNeXT model. This model reached an accuracy of 0.88 on the test set.
+          </p>
+          <a href="https://github.com/cecnyb/Melanoma_detection.git" target="_blank">View on GitHub</a> |
+          <a href="https://cecnyb.github.io/articles/Melanoma_detection.pdf" target="_blank">Read Article</a>
+        </div>
+        <hr>
+        <div class="project">
+          <h2>Question Answering RAG Model with Llama-2 and Mistral</h2>
+          <p>
+            Developed as part of a group project, this system uses a retrieval-augmented generation (RAG) pipeline. A website with quotes was scraped and the content was embedded and stored in Pinecone. The accuracy was compared for two different embedding models and two generative models.
+          </p>
+          <p>
+            The best-performing configuration combined the intfloat/e5-base embedding model with the Mistral generative model, achieving superior performance to GPT-3.5-turbo despite having approximately 1/4 the number of parameters.
+          </p>
+          <a href="https://github.com/rikardradovac/RAG.git" target="_blank">View on GitHub</a> |
+          <a href="https://cecnyb.github.io/articles/RAG_mistral_llama2.pdf" target="_blank">Read Article</a>
+        </div>
+        <hr>
+        <div class="project">
+          <h2>Advanced RAG for Financial QA</h2>
+          <p>
+            This project aimed to develop a financial question-answering system using Advanced Retrieval-Augmented Generation (RAG). The system was built using the ARKMan architecture. The database and questions were derived from the FinQA dataset. Techniques employed included hybrid search, chain-of-thought reasoning, data structuring, and query decomposition.
+          </p>
+          <a href="https://github.com/cecnyb/Advanced_RAG_Financial_QA.git" target="_blank">View on GitHub</a> |
+          <a href="https://cecnyb.github.io/articles/Final_Project_Prompt_Eng.pdf" target="_blank">Group Report</a> |
+          <a href="https://drive.google.com/file/d/10m02d3GYGIeA7wRREcrvoYSSJ7rRpePl/view?usp=sharing" target="_blank">Group Video</a> |
+          <a href="https://drive.google.com/file/d/1-V-PDJY2puYrXNohVTKTjC0wY-SCairb/view?usp=sharing" target="_blank">Individual Video</a>
+        </div>
+        <hr>
+
+        <!-- Add additional projects similarly -->
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Cecilia Nyberg</p>
+  </footer>
+</body>
+</html>
