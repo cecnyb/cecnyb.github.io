@@ -1,0 +1,108 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Navigation Bar Styles */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+  }
+  
+  header nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  header nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* About Section */
+  #about {
+    padding: 2rem;
+    background-color: #fff;
+  }
+  .about-container {
+    display: flex; /* Enable horizontal layout */
+    align-items: center; /* Align items vertically */
+    gap: 3rem; /* Add space between profile and text */
+    max-width: 1100px; /* Set a max width for the content */
+    margin: 0 auto; /* Center the section */
+  }
+  
+  .profile-section {
+    flex: 1; /* Allocate one part of the container to the profile */
+    text-align: center; /* Center text and image inside the profile section */
+  }
+  
+  .profile-pic {
+    width: 180px;
+    height: 190px;
+    border-radius: 3%;
+    object-fit: cover; /* Ensure image scales correctly */
+    margin-bottom: 1rem;
+  }
+  
+  .about-text {
+    flex: 2; /* Allocate two parts of the container to the text */
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Contact Section */
+  #contact {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .contact-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-links li {
+    margin: 10px 0;
+  }
+  
+  .contact-links a {
+    text-decoration: none;
+    color: #007BFF;
+  }
+  
+  .contact-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+  }
+  
