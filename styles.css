@@ -51,14 +51,15 @@ body {
   .profile-pic {
     width: 290px;
     height: 290px;
-    border-radius: 50%;
-    object-fit: contain; /* Show the entire image */
-    object-position: 25px 15px; /* Position the image */
+    border-radius: 0%;
+    object-fit: cover; /* Show the entire image */
+    object-position: 0px -30px; /* Position the image */
     background-color: #ffffff; /* Optional: Background color for empty space */
     
     margin-bottom: 1rem;
     margin-top: 3rem;
     box-shadow: #000000 0px 0px 10px;
+
   }
   
   .about-text {
