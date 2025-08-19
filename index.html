@@ -1,16 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home - Cecilia Nyberg</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1115;
+      --card:#15182192;
+      --muted:#a3a3a3;
+      --text:#e8e8e8;
+      --accent:#7dd3fc; /* sky-300 */
+      --accent-2:#a78bfa; /* violet-400 */
+      --ring: rgba(125,211,252,.5);
+      --maxw: 1100px;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--text);
+      background:linear-gradient(180deg,#0b0d11 0%, #111520 60%, #0f1115 100%);
+    }
+    a{color:var(--accent)}
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:rgba(10,12,16,.6); border-bottom:2px solid rgba(255, 255, 255, 0.376); z-index:20}
+    nav{max-width:var(--maxw); margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between}
+    .brand{font-weight:700; letter-spacing:.3px}
+    .navlinks{display:flex; gap:18px; list-style:none; padding:0; margin:0}
+    .navlinks a{color:#d9e3f0; text-decoration:none; padding:8px 10px; border-radius:10px}
+    .navlinks a:hover{background:rgba(255,255,255,.06)}
+
+    main{max-width:var(--maxw); margin:24px auto; padding:0 20px 80px}
+
+    /* ===== Hero / About ===== */
+    .hero{display:grid; grid-template-columns:1fr 1.2fr; gap:26px; align-items:center}
+    .hero-card{
+    background:var(--card);
+    border:1px solid rgba(255, 255, 255, 0.185);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    
+    padding:22px;
+    text-align:center; /* center text under image */
+    }
+    .profile-pic{width:100%; max-width:320px; height:320px; object-fit:cover; object-position:0 -30px; border-radius:14px; display:block; margin:10px auto 18px; box-shadow:#000 0 0 10px; background:#fff}
+    h1{font-size:clamp(26px,2.4vw,36px); margin:0 0 8px}
+    .subtitle{color:#cbd5e1; margin:0 0 14px}
+    .about{background:var(--card); border:1px solid rgba(255, 255, 255, 0.185); border-radius:var(--radius);  box-shadow:var(--shadow); padding:24px}
+    .about h2{margin:0 0 10px; font-size:clamp(20px,2vw,26px)}
+    .about p{color:var(--muted); margin:0 0 12px; line-height:1.6}
+
+    /* ===== Callouts / Quick links ===== */
+    .cta-wrap{margin-top:26px; display:flex; gap:12px; flex-wrap:wrap}
+    .btn{appearance:none; border:1px solid rgba(255,255,255,.16); padding:10px 14px; border-radius:12px; background:#0f1320; color:#dfe7ff; text-decoration:none; font-weight:600}
+    .btn:hover{border-color:var(--accent); box-shadow:0 0 0 4px var(--ring)}
+
+    /* ===== Contact section ===== */
+    .contact{margin-top:40px}
+    .contact h2{margin:0 0 12px}
+    .contact-links{display:flex; gap:14px; flex-wrap:wrap; list-style:none; padding:0; margin:0}
+    .chip{background:#0f1320; border:1px solid rgba(255,255,255,.12); padding:8px 12px; border-radius:999px}
+
+    footer{border-top:1px solid rgba(255,255,255,.06); color:#cbd5e1}
+    .footwrap{max-width:var(--maxw); margin:0 auto; padding:20px; display:flex; gap:10px; flex-wrap:wrap}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .profile-pic{height:260px; max-width:260px}
+    }
+  </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
   <header>
     <nav>
-      <ul>
+      <div class="brand">Cecilia Nyberg</div>
+      <ul class="navlinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="additional.html">Additional</a></li>
@@ -19,55 +87,43 @@
     </nav>
   </header>
 
-  <!-- Homepage Content -->
   <main>
-    <section id="about">
-      <div class="about-container">
-        <div class="profile-section">
-          <img src="images/Ericsson2.jpg" alt="Cecilia Nyberg" class="profile-pic">
-          <h1>Cecilia Nyberg</h1>
-          <p>Industrial Engineering & Management | Data Science & AI</p>
-        </div>
-        <div class="about-text">
-          <h2>About Me</h2>
-          <p>
-            Hello! I'm Cecilia Nyberg, a recently graduated Data Science and AI Engineer with broad experience across various areas of AI. 
-            I’m particularly interested in deep learning, with a focus on enhancing the practical usability of computationally expensive models such as large language models. 
-            My recent work has involved improving model transferability using meta-learning, lowering parameter precision while maintaining performance and applying AI to 
-            practical applications such as radio units at Ericssoon.
-          </p>
-          <p>
-            With a bachelor's degree in Industrial Engineering and Management, I also have a strong interest in financial analysis 
-            and enjoy exploring how AI can support business decision-making and improve profitability.
-          </p>
-          <p>
-            I recently completed my Master’s thesis at Ericsson, where I optimized energy usage in radio units using time-series forecasting techniques. 
-            I’m currently a visiting researcher at the Deep Learning Lab, Department of Naval Architecture and Ocean Engineering, 
-            Seoul National University. This position, which runs through February 2026, focuses on software-hardware co-optimization .
-          </p>
-          <p>
-            Feel free to explore my projects and experiences on this site!
-          </p>
-              
+    <section class="hero" id="about">
+      <div class="hero-card">
+        <img src="images/Ericsson2.jpg" alt="Cecilia Nyberg" class="profile-pic" />
+        <h1>Cecilia Nyberg</h1>
+        <p class="subtitle">Data Science &amp; AI</p>
+        <div class="cta-wrap">
+          <a class="btn" href="mailto:cecilia.nyberg@hotmail.se">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/cecilianyberg/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/cecnyb" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="projects.html">View Projects</a>
         </div>
       </div>
+      <article class="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Cecilia Nyberg, a recently graduated Data Science and AI Engineer. I’m especially interested in deep learning and in making computationally expensive models—like LLMs—more practical.</p>
+        <p>My recent work includes improving model transferability with meta‑learning, lowering parameter precision while maintaining performance, and applying AI to radio units at Ericsson.</p>
+        <p>I completed my Master’s thesis at Ericsson in June, optimizing energy usage in radio units using time‑series forecasting. I’m currently a visiting researcher at the Deep Learning Lab at Seoul National University. Here I focus on software‑hardware co‑optimization (through February 2026).</p>
+        <p>Feel free to explore my projects and experiences on this site!</p>
+      </article>
     </section>
 
-    <section id="contact">
+    <section class="contact" id="contact">
       <h2>Get in Touch</h2>
       <ul class="contact-links">
-        <li><a href="mailto:cecilia.nyberg@hotmail.se">Email</a></li> |    
-        <li><a href="https://www.linkedin.com/in/cecilianyberg/" target="_blank">LinkedIn</a></li> | 
-        <li><a href="https://github.com/cecnyb" target="_blank">GitHub</a></li> 
+        <li class="chip"><a href="mailto:cecilia.nyberg@hotmail.se">cecilia.nyberg@hotmail.se</a></li>
+        <li class="chip"><a href="https://www.linkedin.com/in/cecilianyberg/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li class="chip"><a href="https://github.com/cecnyb" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
     </section>
   </main>
 
-  <!-- Footer -->
-   <!-- Footer -->
-   <footer>
-    <p style="color: #d6d5d5; margin-left: 200px;">Contact: <a href="mailto:cecilia.nyberg@hotmail.se" style="color: #d6d5d5;">cecilia.nyberg@hotmail.se</a> <a> | +46705200388 </a>
-    <a style = "color: #5c5a5a;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &copy; 2025 Cecilia Nyberg</a></p>
+  <footer>
+    <div class="footwrap">
+      <span>Contact: <a href="mailto:cecilia.nyberg@hotmail.se">cecilia.nyberg@hotmail.se</a> | +46 70 520 03 88</span>
+      <span style="margin-left:auto; color:#9aa4b2">© 2025 Cecilia Nyberg</span>
+    </div>
   </footer>
 </body>
 </html>

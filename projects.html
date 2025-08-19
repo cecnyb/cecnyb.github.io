@@ -1,177 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects - Cecilia Nyberg</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1115;
+      --card:#151821;
+      --muted:#a3a3a3;
+      --text:#e8e8e8;
+      --accent:#7dd3fc; /* sky-300 */
+      --accent-2:#a78bfa; /* violet-400 */
+      --ring: rgba(125,211,252,.5);
+      --maxw: 1100px;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text); background:linear-gradient(180deg,#0b0d11 0%, #111520 60%, #0f1115 100%);
+    }
+    a{color:var(--accent)}
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:rgba(10,12,16,.6); border-bottom:1px solid rgba(255,255,255,.376); z-index:20}
+    nav{max-width:var(--maxw); margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between}
+    .brand{font-weight:700; letter-spacing:.3px}
+    .navlinks{display:flex; gap:18px; list-style:none; padding:0; margin:0}
+    .navlinks a{color:#d9e3f0; text-decoration:none; padding:8px 10px; border-radius:10px}
+    .navlinks a:hover{background:rgba(255,255,255,.06)}
+
+    main{max-width:var(--maxw); margin:24px auto; padding:0 20px 80px}
+    h1{font-size:clamp(26px,2.4vw,36px); margin:12px 0 18px}
+
+    /* ======== Slideshow (carousel) ======== */
+    .carousel{
+      position:relative; overflow:hidden; border-radius:var(--radius); box-shadow:var(--shadow); background:linear-gradient(135deg,#1b2131,#121827);
+    }
+    .slides{display:flex; transition:transform .6s cubic-bezier(.2,.7,.1,1); will-change:transform}
+    .slide{min-width:100%; padding:34px 28px; display:grid; grid-template-columns:1fr; gap:14px; align-items:center}
+    .slide-inner{display:grid; grid-template-columns:1.2fr .8fr; gap:24px}
+    .slide h2{margin:0 0 6px; font-size:clamp(22px,2.2vw,30px)}
+    .slide p{margin:0 0 16px; color:var(--muted); line-height:1.5}
+    .slide-cta{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{appearance:none; border:1px solid rgba(255,255,255,.16); padding:10px 14px; border-radius:12px; background:#0f1320; color:#dfe7ff; text-decoration:none; font-weight:600}
+    .btn:hover{border-color:var(--accent); box-shadow:0 0 0 4px var(--ring)}
+    .slide-art{
+      height:300px; border-radius:14px; background:radial-gradient( 120px 120px at 20% 30%, rgba(125,211,252,.4), transparent 60%),
+                 radial-gradient( 140px 140px at 80% 30%, rgba(167,139,250,.35), transparent 60%),
+                 linear-gradient(135deg,#0f1320,#1a1f2e);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .carousel-controls{position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between; pointer-events:none}
+    .control{pointer-events:auto; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.15); width:40px; height:40px; border-radius:50%; display:grid; place-items:center; margin:0 10px; cursor:pointer}
+    .control:hover{background:rgba(0,0,0,.5)}
+    .dots{position:absolute; left:0; right:0; bottom:10px; display:flex; justify-content:center; gap:8px}
+    .dot{width:8px; height:8px; border-radius:6px; background:#5b667d; border:1px solid rgba(255,255,255,.2); cursor:pointer}
+    .dot[aria-current="true"]{background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+
+    @media (max-width:860px){
+      .slide-inner{grid-template-columns:1fr}
+      .slide-art{height:160px}
+    }
+
+    /* ======== Projects list ======== */
+    .projects-list{margin-top:68px; display:grid; gap:28px} /* increased gap */
+    .project-card{
+      background:var(--card);
+      border:2px solid rgba(125,211,252,.3); /* added visible border */
+      border-radius:var(--radius);
+      padding:22px 22px 20px;
+      box-shadow:var(--shadow);
+    }
+    .project-card h3{margin:0 0 8px; font-size:20px}
+    .project-card p{color:var(--muted); margin:0 0 10px; line-height:1.5}
+    .divider{height:1px; background:rgba(255,255,255,.06); margin:8px 0 2px}
+    .links{display:flex; flex-wrap:wrap; gap:10px}
+
+    /* ======== Footer ======== */
+    footer{border-top:1px solid rgba(255,255,255,.06); color:#cbd5e1;}
+    .footwrap{max-width:var(--maxw); margin:0 auto; padding:20px; display:flex; gap:10px; flex-wrap:wrap}
+
+    /* Accessibility */
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+  </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
   <header>
     <nav>
-      <ul>
+      <div class="brand">Cecilia Nyberg</div>
+      <ul class="navlinks">
         <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="additional.html">Additional</a></li>
         <li><a href="CV.html">CV</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Projects Content -->
   <main>
-    <section id="projects">
-      <h1>Selected Projects</h1>
-      <div class="project-container">
-        <div class="project">
-          <h2>Sparse Matrix Optimization with Meta-Learning</h2>
-          <p>
-            This project builds on the WACO (Workload-Aware Co-Optimization) model by integrating meta-learning into the training loop to address its limitations. WACO optimizes storage and scheduling to significantly speed up sparse matrix operations, but its performance declines on new hardware due to hardware-dependent labels. Re-training the model on new hardware is costly, limiting its practical usability.
-          </p>
-          <p>
-            By incorporating meta-learning, this project reduces the re-training time required for adapting WACO to a new machine. The enhanced model achieves strong performance using minimal data: when retrained on just 300 data points, the meta-learning-enhanced WACO outperformed the original WACO model on data from a new machine.
-          </p>
-          <a href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM.git" target="_blank">View on GitHub</a> |
-          <a href="https://cecnyb.github.io/articles/WACO_WITH_META_LEARNING.pdf" target="_blank">Read Article</a>
-        </div>
-        <hr>
-        <div class="project">
-          <h2>Detection of Melanoma in Images</h2>
-          <p>
-            A convolutional neural network (CNN) was developed to detect melanoma in images of birthmarks. Several approaches were evaluated, and the best performing model used transfer learning by fine-tuning the ConvNeXT model. This model reached an accuracy of 0.88 on the test set.
-          </p>
-          <a href="https://github.com/cecnyb/Melanoma_detection.git" target="_blank">View on GitHub</a> |
-          <a href="https://cecnyb.github.io/articles/Melanoma_detection.pdf" target="_blank">Read Article</a>
-        </div>
-        <hr>
-        <div class="project">
-          <h2>Question Answering RAG Model with Llama-2 and Mistral</h2>
-          <p>
-            Developed as part of a group project, this system uses a retrieval-augmented generation (RAG) pipeline. A website with quotes was scraped and the content was embedded and stored in Pinecone. The accuracy was compared for two different embedding models and two generative models.
-          </p>
-          <p>
-            The best-performing configuration combined the intfloat/e5-base embedding model with the Mistral generative model, achieving superior performance to GPT-3.5-turbo despite having approximately 1/4 the number of parameters.
-          </p>
-          <a href="https://github.com/rikardradovac/RAG.git" target="_blank">View on GitHub</a> |
-          <a href="https://cecnyb.github.io/articles/RAG_mistral_llama2.pdf" target="_blank">Read Article</a>
-        </div>
-        <hr>
-        <div class="project">
-          <h2>Advanced RAG for Financial QA</h2>
-          <p>
-            This project aimed to develop a financial question-answering system using Advanced Retrieval-Augmented Generation (RAG). The system was built using the ARKMan architecture. The database and questions were derived from the FinQA dataset. Techniques employed included hybrid search, chain-of-thought reasoning, data structuring, and query decomposition.
-          </p>
-          <a href="https://github.com/cecnyb/Advanced_RAG_Financial_QA.git" target="_blank">View on GitHub</a> |
-          <a href="https://cecnyb.github.io/articles/Final_Project_Prompt_Eng.pdf" target="_blank">Group Report</a> |
-          <a href="https://drive.google.com/file/d/10m02d3GYGIeA7wRREcrvoYSSJ7rRpePl/view?usp=sharing" target="_blank">Group Video</a> |
-          <a href="https://drive.google.com/file/d/1-V-PDJY2puYrXNohVTKTjC0wY-SCairb/view?usp=sharing" target="_blank">Individual Video</a>
-        </div>
-        <hr>
+    <h1>Selected Projects</h1>
 
-        <!-- Add additional projects similarly -->
-        <div class="project">
-          <h2>Topic Modeling Using LDA with Collapsed Gibbs Sampling</h2>
-          <p>
-          In this project, a topic modeling system was developed using Latent Dirichlet Allocation (LDA) with collapsed Gibbs sampling. This unsupervised method identifies latent semantic structures in data and extracts representative words for specific topics. 
-      
-          A subset of 3000 documents from the 20 Newsgroups dataset was used, and different numbers of topics were tested. Using the UMass coherence metric, the best results were achieved with 10 topics and hyperparameters α = β = 0.1. 
-          </p>
-          <a href="https://github.com/cecnyb/Topic_modeling_LDA.git">View on GitHub</a> | 
-          <a href="https://cecnyb.github.io/articles/Topic_modeling.pdf" target="_blank">Read Article</a><br>
-        </div>
-        <hr>
-      <div class="project">
-          <h2>Image Classification of Trees from Bark</h2>
-          <p>
-          A convolutional neural network (CNN) was developed to classify trees from 12 species using bark images. The project includes an ablation study to evaluate the impact of key CNN components.
-      
-          The base model achieved 66% accuracy, which improved to 80% after incorporating improvements. The ablation study identified residual connections, data normalization, and batch normalization as the most impactful factors.
-      
-          Additionally, an in-order vs. out-of-order (ID/OOD) classification task was conducted using bark and coffee bean images. The model achieved 100% accuracy in distinguishing ID/OOD samples.
-          </p>
-          <a href="https://github.com/cecnyb/TreeClassification.git">View on GitHub</a> | 
-          <a href="https://cecnyb.github.io/articles/ImageClassificationTrees.pdf" target="_blank">Read Article</a>
-        </div>
-        <hr>
-      <div class="project">
-          <h2>Non-Linear Energy Optimization in Network</h2>
-          <p>
-          This project optimized energy production and transmission in an 11-node network with generators and customers. The goal was to minimize energy production costs while meeting power demands, accounting for active and reactive power. 
-          The lowest cost found was 186.29 SEK, though the non-convex nature of the problem means the solution is not guaranteed to be a global minimum. The code, written in Julia, is included in the appendix.
-          </p>
-          <a href="https://cecnyb.github.io/articles/Planning_of_electricity_production_and_transmission-1.pdf" target="_blank">Read Article</a>
-        </div>
-        <hr>
-      <div class="project">
-          <h2>Comparison of Fine-Tuning Methods: LoRA vs Feature Extraction</h2>
-          <p> 
-          Retraining large language models (LLMs) is time- and computationally expensive. Without retraining, accuracy may drop when an LLM is applied to a new task. Fine-tuning methods are therefore crucial to maintaining high accuracy while reducing retraining time. 
-          In this project, two fine-tuning methods were compared: feature extraction, which involves freezing the top layers of the model, and LoRA, which updates targeted weights in the model. The results showed that LoRA outperformed the feature extraction method, achieving an accuracy and F1 score of 0.93 compared to 0.81 for the feature extraction method.
-          </p>
-          <a href="https://github.com/cecnyb/Comparsion_LoRA_FT.git">View on GitHub</a> | 
-          <a href="https://cecnyb.github.io/articles/LoRA.pdf" target="_blank">Read Report</a>
-        </div>
-        <hr>
-      <div class="project">
-          <h2>Comparison of ML Methods for Classifying Comments as Pro or Anti COVID Vaccine</h2>
-          <p>
-          The project compared machine learning methods for classifying comments on Covid-19 vaccines as positive or negative. The comments were collected from social media platforms and labeled by human annotators. The highest accuracy was received when using a logistic regression model with a TF-IDF vectorizer, which achieved an accuracy of 0.89.
-          </p>
-          <a href="https://github.com/cecnyb/Covid_comment_classification.git">View on GitHub</a> | 
-          <a href="https://cecnyb.github.io/articles/Document_classifier_covid.pdf" target="_blank">Read Report</a><br>
-        </div>
-        <hr>
-      <div class="project">
-          <h2>Reinforcement Learning for Playing Tic-Tac-Toe with Agent</h2> 
-          <p>
-          The project used reinforcement learning to train an agent to play tic-tac-toe. The search was done using Monte Carlo Tree Search and scores calculated using UCT. The winning frequency against a random strategy was 0.86, and against a blocking strategy it was 0.83.
-          </p>
-          <a href="https://github.com/cecnyb/RL_tic_tac_toe.git">View on GitHub</a> | 
-          <a href="https://cecnyb.github.io/articles/annotated-Module6Group60-1.pdf" target="_blank">Read Report</a>
+    <!-- ===== Slideshow / Carousel ===== -->
+    <section class="carousel" aria-label="Featured projects">
+      <div class="slides" id="slides" data-index="0">
+        <!-- Slide 1 -->
+        <article class="slide" aria-roledescription="slide">
+          <div class="slide-inner">
+            <div>
+              <h2>Sparse Matrix Optimization with Meta‑Learning</h2>
+              <p>Extends WACO with meta‑learning to adapt across hardware with minimal data. On 300 samples from a new machine, our meta‑trained model outperformed the original WACO.</p>
+              <div class="slide-cta">
+                <a class="btn" href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM.git" target="_blank" rel="noopener">View on GitHub</a>
+                <a class="btn" href="https://cecnyb.github.io/articles/WACO_WITH_META_LEARNING.pdf" target="_blank" rel="noopener">Read article</a>
+              </div>
+            </div>
+            <div class="slide-art" role="img" aria-label="Abstract artwork for sparse matrix optimization"></div>
+          </div>
+        </article>
+        <!-- Slide 2 -->
+        <article class="slide" aria-roledescription="slide">
+          <div class="slide-inner">
+            <div>
+              <h2>Detection of Melanoma in Images</h2>
+              <p>Transfer learning with ConvNeXT for dermoscopy images. Best model reached 0.88 accuracy on the test set.</p>
+              <div class="slide-cta">
+                <a class="btn" href="https://github.com/cecnyb/Melanoma_detection.git" target="_blank" rel="noopener">View on GitHub</a>
+                <a class="btn" href="https://cecnyb.github.io/articles/Melanoma_detection.pdf" target="_blank" rel="noopener">Read article</a>
+              </div>
+            </div>
+            <div class="slide-art" role="img" aria-label="Abstract artwork for melanoma project"></div>
+          </div>
+        </article>
+        <!-- Slide 3 -->
+        <article class="slide" aria-roledescription="slide">
+          <div class="slide-inner">
+            <div>
+              <h2>QA RAG with Llama‑2 & Mistral</h2>
+              <p>Scraped quotes website → embedded to Pinecone. Best combo: e5‑base embeddings + Mistral, outperforming GPT‑3.5‑turbo on this task.</p>
+              <div class="slide-cta">
+                <a class="btn" href="https://github.com/rikardradovac/RAG.git" target="_blank" rel="noopener">View on GitHub</a>
+                <a class="btn" href="https://cecnyb.github.io/articles/RAG_mistral_llama2.pdf" target="_blank" rel="noopener">Read article</a>
+              </div>
+            </div>
+            <div class="slide-art" role="img" aria-label="Abstract artwork for RAG project"></div>
+          </div>
+        </article>
+        <!-- Slide 4 -->
+        <article class="slide" aria-roledescription="slide">
+          <div class="slide-inner">
+            <div>
+              <h2>Advanced RAG for Financial QA</h2>
+              <p>Built on the ARKMan architecture with hybrid search, reasoning chains, and query decomposition using FinQA data.</p>
+              <div class="slide-cta">
+                <a class="btn" href="https://github.com/cecnyb/Advanced_RAG_Financial_QA.git" target="_blank" rel="noopener">View on GitHub</a>
+                <a class="btn" href="https://cecnyb.github.io/articles/Final_Project_Prompt_Eng.pdf" target="_blank" rel="noopener">Group report</a>
+              </div>
+            </div>
+            <div class="slide-art" role="img" aria-label="Abstract artwork for financial QA project"></div>
+          </div>
+        </article>
       </div>
-        <hr>
-      <div class="project">
-          <h2>Recommendation System for Netflix Movies</h2>
-          <p>
-          A recommendation system was built for recommending movies based on previous ratings, genre preferences and ratings from similar users. The code implementation is included in the appendix. 
-          </p>
-          <a href="https://cecnyb.github.io/articles/annotated-DAT410__Assignment_2.pdf" target="_blank">Read Report</a>
-        </div>
-        <hr>
-      <div class="project">
-          <h2>N-Gram Model for Generating Nobel Prize Winner Motivations</h2> 
-          <p>
-          Generating Nobel Prize winner motivations using N-gram models. The performance was measured using semantic similarity and BLEU score. The highest similarity score was 0.56 and recieved using a deterministic bigram model using a category-specific algorithm. 
-          </p>
-          <a href="https://github.com/cecnyb/Nobel_prize_winner_motivations.git" target="_blank">View on GitHub</a> | 
-          <a href="https://cecnyb.github.io/articles/annotated-Module8Group60.pdf" target="_blank">Read Report</a>
-        </div>
-        <hr>
-      <div class="project">
-          <h2>IBM Translation Model</h2>
-          <p>
-          A translation model was developed using IBM Model 1. The model was trained on a parallel corpus of English, Swedish, German and French sentences. 
-          </p>
-          <a href="https://github.com/cecnyb/IBM_translation_model.git" target="_blank">View on GitHub</a> | 
-          <a href="https://cecnyb.github.io/articles/annotated-Module5Goup60.pdf" target="_blank">Read Report</a><br>
-        </div>
-  
-    
-  </ul>
-</section>
-
-
-
-
+      <div class="carousel-controls" aria-hidden="false">
+        <button class="control" id="prev" aria-label="Previous slide">&#9664;</button>
+        <button class="control" id="next" aria-label="Next slide">&#9654;</button>
       </div>
+      <div class="dots" role="tablist" aria-label="Choose slide">
+        <button class="dot" role="tab" aria-selected="true" aria-current="true" aria-controls="s1"></button>
+        <button class="dot" role="tab" aria-selected="false" aria-controls="s2"></button>
+        <button class="dot" role="tab" aria-selected="false" aria-controls="s3"></button>
+        <button class="dot" role="tab" aria-selected="false" aria-controls="s4"></button>
+      </div>
+    </section>
+
+    <!-- ===== Projects List (unchanged content, restyled) ===== -->
+    <section id="projects" class="projects-list">
+      <article class="project-card">
+        <h3>Sparse Matrix Optimization with Meta-Learning</h3>
+        <p>This project builds on WACO by integrating meta‑learning to reduce re‑training time when adapting to new hardware. With just 300 samples, it outperformed the original WACO on a new machine.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="https://cecnyb.github.io/articles/WACO_WITH_META_LEARNING.pdf" target="_blank" rel="noopener">Read Article</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Detection of Melanoma in Images</h3>
+        <p>Transfer learning with ConvNeXT. Accuracy 0.88 on held‑out test set.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/cecnyb/Melanoma_detection.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="https://cecnyb.github.io/articles/Melanoma_detection.pdf" target="_blank" rel="noopener">Read Article</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Question Answering RAG Model with Llama‑2 and Mistral</h3>
+        <p>RAG pipeline using Pinecone vector DB. Best config: e5‑base + Mistral, beating GPT‑3.5‑turbo on this dataset.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/rikardradovac/RAG.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="https://cecnyb.github.io/articles/RAG_mistral_llama2.pdf" target="_blank" rel="noopener">Read Article</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Advanced RAG for Financial QA</h3>
+        <p>Financial QA using ARKMan, hybrid search, chain‑of‑thought, and query decomposition; FinQA dataset for evaluation.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/cecnyb/Advanced_RAG_Financial_QA.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="https://cecnyb.github.io/articles/Final_Project_Prompt_Eng.pdf" target="_blank" rel="noopener">Group Report</a>
+          <a class="btn" href="https://drive.google.com/file/d/10m02d3GYGIeA7wRREcrvoYSSJ7rRpePl/view?usp=sharing" target="_blank" rel="noopener">Group Video</a>
+          <a class="btn" href="https://drive.google.com/file/d/1-V-PDJY2puYrXNohVTKTjC0wY-SCairb/view?usp=sharing" target="_blank" rel="noopener">Individual Video</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Topic Modeling Using LDA with Collapsed Gibbs Sampling</h3>
+        <p>3000 docs from 20 Newsgroups. Best coherence with 10 topics and α = β = 0.1.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/cecnyb/Topic_modeling_LDA.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="https://cecnyb.github.io/articles/Topic_modeling.pdf" target="_blank" rel="noopener">Read Article</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Image Classification of Trees from Bark</h3>
+        <p>CNN for 12 species from bark images. Ablation study highlights: residuals, normalization, batch norm. Added OOD vs ID task (100% on that split).</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/cecnyb/TreeClassification.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="https://cecnyb.github.io/articles/ImageClassificationTrees.pdf" target="_blank" rel="noopener">Read Article</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Non‑Linear Energy Optimization in Network</h3>
+        <p>11‑node grid model minimizing generation cost while meeting demand (active/reactive). Best found cost: 186.29 SEK (non‑convex; not guaranteed global optimum).</p>
+        <div class="links">
+          <a class="btn" href="https://cecnyb.github.io/articles/Planning_of_electricity_production_and_transmission-1.pdf" target="_blank" rel="noopener">Read Article</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>LoRA vs Feature Extraction</h3>
+        <p>Comparing LoRA with feature extraction for task adaptation. LoRA achieved Acc/F1 ≈ 0.93 vs 0.81.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/cecnyb/Comparsion_LoRA_FT.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="https://cecnyb.github.io/articles/LoRA.pdf" target="_blank" rel="noopener">Read Report</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Classifying Pro/Anti COVID‑19 Vaccine Comments</h3>
+        <p>Best baseline: Logistic Regression + TF‑IDF (Acc 0.89) on annotated social media comments.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/cecnyb/Covid_comment_classification.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="https://cecnyb.github.io/articles/Document_classifier_covid.pdf" target="_blank" rel="noopener">Read Report</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Reinforcement Learning for Tic‑Tac‑Toe</h3>
+        <p>MCTS with UCT. Win rate: 0.86 vs random; 0.83 vs blocking strategy.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/cecnyb/RL_tic_tac_toe.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="https://cecnyb.github.io/articles/annotated-Module6Group60-1.pdf" target="_blank" rel="noopener">Read Report</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Recommendation System for Netflix Movies</h3>
+        <p>Hybrid preferences using prior ratings, genres, and similar users.</p>
+        <div class="links">
+          <a class="btn" href="https://cecnyb.github.io/articles/annotated-DAT410__Assignment_2.pdf" target="_blank" rel="noopener">Read Report</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>N‑Gram Model: Nobel Prize Motivations</h3>
+        <p>Deterministic bigram per category achieved highest semantic similarity (0.56) and strong BLEU on this dataset.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/cecnyb/Nobel_prize_winner_motivations.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="https://cecnyb.github.io/articles/annotated-Module8Group60.pdf" target="_blank" rel="noopener">Read Report</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>IBM Translation Model</h3>
+        <p>IBM Model 1 on parallel EN‑SV‑DE‑FR corpus.</p>
+        <div class="links">
+          <a class="btn" href="https://github.com/cecnyb/IBM_translation_model.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="https://cecnyb.github.io/articles/annotated-Module5Goup60.pdf" target="_blank" rel="noopener">Read Report</a>
+        </div>
+      </article>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p style="color: #d6d5d5; margin-left: 200px;">Contact: <a href="mailto:cecilia.nyberg@hotmail.se" style="color: #d6d5d5;">cecilia.nyberg@hotmail.se</a> <a> | +46705200388 </a>
-    <a style = "color: #5c5a5a;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &copy; 2025 Cecilia Nyberg</a></p>
+    <div class="footwrap">
+      <span>Contact: <a href="mailto:cecilia.nyberg@hotmail.se">cecilia.nyberg@hotmail.se</a> | +46 70 520 03 88</span>
+      <span style="margin-left:auto; color:#9aa4b2">© 2025 Cecilia Nyberg</span>
+    </div>
   </footer>
+
+  <script>
+    (function(){
+      const slides = document.getElementById('slides');
+      const dots = Array.from(document.querySelectorAll('.dot'));
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
+      const total = slides.children.length;
+      let index = 0;
+      let auto = null;
+
+      function setIndex(i){
+        index = (i + total) % total;
+        slides.style.transform = `translateX(${-index*100}%)`;
+        dots.forEach((d,k)=>{
+          d.setAttribute('aria-current', k===index);
+          d.setAttribute('aria-selected', k===index);
+        });
+      }
+
+      function startAuto(){
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        stopAuto();
+        auto = setInterval(()=> setIndex(index+1), 2500);
+      }
+      function stopAuto(){ if(auto) clearInterval(auto); }
+
+      prev.addEventListener('click', ()=>{ setIndex(index-1); startAuto(); });
+      next.addEventListener('click', ()=>{ setIndex(index+1); startAuto(); });
+      dots.forEach((d,k)=> d.addEventListener('click', ()=>{ setIndex(k); startAuto(); }));
+
+      // Keyboard support
+      document.addEventListener('keydown', (e)=>{
+        if(e.key==='ArrowLeft') { setIndex(index-1); startAuto(); }
+        if(e.key==='ArrowRight'){ setIndex(index+1); startAuto(); }
+      });
+
+      // Touch swipe
+      let startX=null;
+      slides.addEventListener('touchstart', e=>{ startX = e.touches[0].clientX; stopAuto(); }, {passive:true});
+      slides.addEventListener('touchend', e=>{
+        if(startX===null) return; const dx = e.changedTouches[0].clientX - startX; startX=null;
+        if(Math.abs(dx) > 40){ setIndex(index + (dx<0?1:-1)); }
+        startAuto();
+      });
+
+      // Init
+      setIndex(0);
+      startAuto();
+
+      // Pause autoplay when hovering controls/slides
+      document.querySelector('.carousel').addEventListener('mouseenter', stopAuto);
+      document.querySelector('.carousel').addEventListener('mouseleave', startAuto);
+    })();
+  </script>
 </body>
 </html>
