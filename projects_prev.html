@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Cecilia Nyberg</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="additional.html">Additional</a></li>
+        <li><a href="CV.html">CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Projects Content -->
+  <main>
+    <section id="projects">
+      <h1>Selected Projects</h1>
+      <div class="project-container">
+        <div class="project">
+          <h2>Sparse Matrix Optimization with Meta-Learning</h2>
+          <p>
+            This project builds on the WACO (Workload-Aware Co-Optimization) model by integrating meta-learning into the training loop to address its limitations. WACO optimizes storage and scheduling to significantly speed up sparse matrix operations, but its performance declines on new hardware due to hardware-dependent labels. Re-training the model on new hardware is costly, limiting its practical usability.
+          </p>
+          <p>
+            By incorporating meta-learning, this project reduces the re-training time required for adapting WACO to a new machine. The enhanced model achieves strong performance using minimal data: when retrained on just 300 data points, the meta-learning-enhanced WACO outperformed the original WACO model on data from a new machine.
+          </p>
+          <a href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM.git" target="_blank">View on GitHub</a> |
+          <a href="https://cecnyb.github.io/articles/WACO_WITH_META_LEARNING.pdf" target="_blank">Read Article</a>
+        </div>
+        <hr>
+        <div class="project">
+          <h2>Detection of Melanoma in Images</h2>
+          <p>
+            A convolutional neural network (CNN) was developed to detect melanoma in images of birthmarks. Several approaches were evaluated, and the best performing model used transfer learning by fine-tuning the ConvNeXT model. This model reached an accuracy of 0.88 on the test set.
+          </p>
+          <a href="https://github.com/cecnyb/Melanoma_detection.git" target="_blank">View on GitHub</a> |
+          <a href="https://cecnyb.github.io/articles/Melanoma_detection.pdf" target="_blank">Read Article</a>
+        </div>
+        <hr>
+        <div class="project">
+          <h2>Question Answering RAG Model with Llama-2 and Mistral</h2>
+          <p>
+            Developed as part of a group project, this system uses a retrieval-augmented generation (RAG) pipeline. A website with quotes was scraped and the content was embedded and stored in Pinecone. The accuracy was compared for two different embedding models and two generative models.
+          </p>
+          <p>
+            The best-performing configuration combined the intfloat/e5-base embedding model with the Mistral generative model, achieving superior performance to GPT-3.5-turbo despite having approximately 1/4 the number of parameters.
+          </p>
+          <a href="https://github.com/rikardradovac/RAG.git" target="_blank">View on GitHub</a> |
+          <a href="https://cecnyb.github.io/articles/RAG_mistral_llama2.pdf" target="_blank">Read Article</a>
+        </div>
+        <hr>
+        <div class="project">
+          <h2>Advanced RAG for Financial QA</h2>
+          <p>
+            This project aimed to develop a financial question-answering system using Advanced Retrieval-Augmented Generation (RAG). The system was built using the ARKMan architecture. The database and questions were derived from the FinQA dataset. Techniques employed included hybrid search, chain-of-thought reasoning, data structuring, and query decomposition.
+          </p>
+          <a href="https://github.com/cecnyb/Advanced_RAG_Financial_QA.git" target="_blank">View on GitHub</a> |
+          <a href="https://cecnyb.github.io/articles/Final_Project_Prompt_Eng.pdf" target="_blank">Group Report</a> |
+          <a href="https://drive.google.com/file/d/10m02d3GYGIeA7wRREcrvoYSSJ7rRpePl/view?usp=sharing" target="_blank">Group Video</a> |
+          <a href="https://drive.google.com/file/d/1-V-PDJY2puYrXNohVTKTjC0wY-SCairb/view?usp=sharing" target="_blank">Individual Video</a>
+        </div>
+        <hr>
+
+        <!-- Add additional projects similarly -->
+        <div class="project">
+          <h2>Topic Modeling Using LDA with Collapsed Gibbs Sampling</h2>
+          <p>
+          In this project, a topic modeling system was developed using Latent Dirichlet Allocation (LDA) with collapsed Gibbs sampling. This unsupervised method identifies latent semantic structures in data and extracts representative words for specific topics. 
+      
+          A subset of 3000 documents from the 20 Newsgroups dataset was used, and different numbers of topics were tested. Using the UMass coherence metric, the best results were achieved with 10 topics and hyperparameters α = β = 0.1. 
+          </p>
+          <a href="https://github.com/cecnyb/Topic_modeling_LDA.git">View on GitHub</a> | 
+          <a href="https://cecnyb.github.io/articles/Topic_modeling.pdf" target="_blank">Read Article</a><br>
+        </div>
+        <hr>
+      <div class="project">
+          <h2>Image Classification of Trees from Bark</h2>
+          <p>
+          A convolutional neural network (CNN) was developed to classify trees from 12 species using bark images. The project includes an ablation study to evaluate the impact of key CNN components.
+      
+          The base model achieved 66% accuracy, which improved to 80% after incorporating improvements. The ablation study identified residual connections, data normalization, and batch normalization as the most impactful factors.
+      
+          Additionally, an in-order vs. out-of-order (ID/OOD) classification task was conducted using bark and coffee bean images. The model achieved 100% accuracy in distinguishing ID/OOD samples.
+          </p>
+          <a href="https://github.com/cecnyb/TreeClassification.git">View on GitHub</a> | 
+          <a href="https://cecnyb.github.io/articles/ImageClassificationTrees.pdf" target="_blank">Read Article</a>
+        </div>
+        <hr>
+      <div class="project">
+          <h2>Non-Linear Energy Optimization in Network</h2>
+          <p>
+          This project optimized energy production and transmission in an 11-node network with generators and customers. The goal was to minimize energy production costs while meeting power demands, accounting for active and reactive power. 
+          The lowest cost found was 186.29 SEK, though the non-convex nature of the problem means the solution is not guaranteed to be a global minimum. The code, written in Julia, is included in the appendix.
+          </p>
+          <a href="https://cecnyb.github.io/articles/Planning_of_electricity_production_and_transmission-1.pdf" target="_blank">Read Article</a>
+        </div>
+        <hr>
+      <div class="project">
+          <h2>Comparison of Fine-Tuning Methods: LoRA vs Feature Extraction</h2>
+          <p> 
+          Retraining large language models (LLMs) is time- and computationally expensive. Without retraining, accuracy may drop when an LLM is applied to a new task. Fine-tuning methods are therefore crucial to maintaining high accuracy while reducing retraining time. 
+          In this project, two fine-tuning methods were compared: feature extraction, which involves freezing the top layers of the model, and LoRA, which updates targeted weights in the model. The results showed that LoRA outperformed the feature extraction method, achieving an accuracy and F1 score of 0.93 compared to 0.81 for the feature extraction method.
+          </p>
+          <a href="https://github.com/cecnyb/Comparsion_LoRA_FT.git">View on GitHub</a> | 
+          <a href="https://cecnyb.github.io/articles/LoRA.pdf" target="_blank">Read Report</a>
+        </div>
+        <hr>
+      <div class="project">
+          <h2>Comparison of ML Methods for Classifying Comments as Pro or Anti COVID Vaccine</h2>
+          <p>
+          The project compared machine learning methods for classifying comments on Covid-19 vaccines as positive or negative. The comments were collected from social media platforms and labeled by human annotators. The highest accuracy was received when using a logistic regression model with a TF-IDF vectorizer, which achieved an accuracy of 0.89.
+          </p>
+          <a href="https://github.com/cecnyb/Covid_comment_classification.git">View on GitHub</a> | 
+          <a href="https://cecnyb.github.io/articles/Document_classifier_covid.pdf" target="_blank">Read Report</a><br>
+        </div>
+        <hr>
+      <div class="project">
+          <h2>Reinforcement Learning for Playing Tic-Tac-Toe with Agent</h2> 
+          <p>
+          The project used reinforcement learning to train an agent to play tic-tac-toe. The search was done using Monte Carlo Tree Search and scores calculated using UCT. The winning frequency against a random strategy was 0.86, and against a blocking strategy it was 0.83.
+          </p>
+          <a href="https://github.com/cecnyb/RL_tic_tac_toe.git">View on GitHub</a> | 
+          <a href="https://cecnyb.github.io/articles/annotated-Module6Group60-1.pdf" target="_blank">Read Report</a>
+      </div>
+        <hr>
+      <div class="project">
+          <h2>Recommendation System for Netflix Movies</h2>
+          <p>
+          A recommendation system was built for recommending movies based on previous ratings, genre preferences and ratings from similar users. The code implementation is included in the appendix. 
+          </p>
+          <a href="https://cecnyb.github.io/articles/annotated-DAT410__Assignment_2.pdf" target="_blank">Read Report</a>
+        </div>
+        <hr>
+      <div class="project">
+          <h2>N-Gram Model for Generating Nobel Prize Winner Motivations</h2> 
+          <p>
+          Generating Nobel Prize winner motivations using N-gram models. The performance was measured using semantic similarity and BLEU score. The highest similarity score was 0.56 and recieved using a deterministic bigram model using a category-specific algorithm. 
+          </p>
+          <a href="https://github.com/cecnyb/Nobel_prize_winner_motivations.git" target="_blank">View on GitHub</a> | 
+          <a href="https://cecnyb.github.io/articles/annotated-Module8Group60.pdf" target="_blank">Read Report</a>
+        </div>
+        <hr>
+      <div class="project">
+          <h2>IBM Translation Model</h2>
+          <p>
+          A translation model was developed using IBM Model 1. The model was trained on a parallel corpus of English, Swedish, German and French sentences. 
+          </p>
+          <a href="https://github.com/cecnyb/IBM_translation_model.git" target="_blank">View on GitHub</a> | 
+          <a href="https://cecnyb.github.io/articles/annotated-Module5Goup60.pdf" target="_blank">Read Report</a><br>
+        </div>
+  
+    
+  </ul>
+</section>
+
+
+
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p style="color: #d6d5d5; margin-left: 200px;">Contact: <a href="mailto:cecilia.nyberg@hotmail.se" style="color: #d6d5d5;">cecilia.nyberg@hotmail.se</a> <a> | +46705200388 </a>
+    <a style = "color: #5c5a5a;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &copy; 2025 Cecilia Nyberg</a></p>
+  </footer>
+</body>
+</html>
