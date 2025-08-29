@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - Cecilia Nyberg</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV - Cecilia Nyberg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #f4f4f4;
-      font-family: 'Arial', sans-serif;
+    :root{
+      --bg:#0f1115;
+      --card:#151821;
+      --muted:#a3a3a3;
+      --text:#e8e8e8;
+      --accent:#7dd3fc;   /* sky-300 */
+      --accent-2:#a78bfa; /* violet-400 */
+      --ring:rgba(125,211,252,.5);
+      --maxw:1100px;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#0b0d11 0%, #111520 60%, #0f1115 100%);
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Header / Nav (consistent) */
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:rgba(10,12,16,.6); border-bottom:1px solid rgba(255,255,255,.376); z-index:20}
+    nav{max-width:var(--maxw); margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between}
+    .brand{font-weight:700; letter-spacing:.3px}
+    .navlinks{display:flex; gap:18px; list-style:none; padding:0; margin:0}
+    .navlinks a{color:#d9e3f0; text-decoration:none; padding:8px 10px; border-radius:10px}
+    .navlinks a:hover{background:rgba(255,255,255,.06)}
+
+    /* Layout */
+    main{max-width:var(--maxw); margin:24px auto; padding:0 20px 80px}
+    h1{font-size:clamp(26px,2.4vw,36px); margin:12px 0 10px}
+    p.muted{color:var(--muted); margin:0 0 16px}
+
+    /* Card */
+    .card{
+      background:var(--card);
+      border:2px solid rgba(125,211,252,.3);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
     }
 
-    .resume-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      margin: 50px 0;
+    /* Buttons */
+    .links{display:flex; flex-wrap:wrap; gap:10px; margin:10px 0 18px}
+    .btn{
+      appearance:none; border:1px solid rgba(255,255,255,.16);
+      padding:10px 14px; border-radius:12px; background:#0f1320; color:#dfe7ff;
+      font-weight:600; text-decoration:none
+    }
+    .btn:hover{border-color:var(--accent); box-shadow:0 0 0 4px var(--ring)}
+
+    /* PDF preview (responsive, no scrollbars/toolbars) */
+    .resume-frame{
+      position:relative; width:100%; aspect-ratio:8.5/11; /* letter-ish */
+      border:1px solid rgba(255,255,255,.08); border-radius:12px; overflow:hidden;
+      background:linear-gradient(135deg,#0f1320,#1a1f2e);
+    }
+    .resume-frame iframe{
+      position:absolute; inset:0; width:100%; height:100%; border:0;
     }
 
-    .resume-container {
-      width: 90%;
-      max-width: 700px; /* Smaller display */
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      border-radius: 15px;
-      overflow: hidden;
-      background: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .resume-title {
-      font-size: 2rem;
-      color: #333;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .download-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      font-size: 1rem;
-      font-weight: bold;
-      color: white;
-      background: #1a5385;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-
-    .download-btn:hover {
-      background: #0056b3;
-    }
-
-    .resume-preview {
-      width: 100%;
-      height: 985px; /* Smaller preview */
-      border: none;
-    }
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.06); color:#cbd5e1;}
+    .footwrap{max-width:var(--maxw); margin:0 auto; padding:20px; display:flex; gap:10px; flex-wrap:wrap}
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
   <header>
     <nav>
-      <ul>
+      <div class="brand">Cecilia Nyberg</div>
+      <ul class="navlinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="additional.html">Additional</a></li>
@@ -76,24 +89,28 @@
     </nav>
   </header>
 
-  <!-- Display Resume Section -->
   <main>
-    <section class="resume-section">
-        <h1 class="resume-title">Resume</h1  style=" margin-top: 0px; margin-bottom: 90px;">
-          <p>You can download my resume below. </p>
-          For a summary of my academic and professional experience, please see the Projects and Additional pages.
-      <a href="https://cecnyb.github.io/documents/Resume.pdf" download class="download-btn"  style=" margin-bottom: 30px;">📄 Download Resume</a>
-      <div class="resume-container"  style=" margin-bottom: 90px;">
-        <iframe class="resume-preview" src="https://cecnyb.github.io/documents/Resume.pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
+    <h1>Resume</h1>
+    <p class="muted">Download my resume below.</p>
+
+    <section class="card">
+      <div class="links">
+        <a class="btn" href="https://cecnyb.github.io/documents/Resume.pdf" download rel="noopener">📄 Download Resume</a>
+        <a class="btn" href="mailto:cecilia.nyberg@hotmail.se">Contact Me</a>
       </div>
-      
+
+      <!-- Embedded preview -->
+      <div class="resume-frame">
+        <iframe src="https://cecnyb.github.io/documents/Resume.pdf#view=FitH&toolbar=0&navpanes=0&scrollbar=0" title="Resume preview"></iframe>
+      </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p style="color: #d6d5d5; margin-left: 200px;">Contact: <a href="mailto:cecilia.nyberg@hotmail.se" style="color: #d6d5d5;">cecilia.nyberg@hotmail.se</a> <a> | +46705200388 </a>
-    <a style = "color: #5c5a5a;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &copy; 2025 Cecilia Nyberg</a></p>
+    <div class="footwrap">
+      <span>Contact: <a href="mailto:cecilia.nyberg@hotmail.se">cecilia.nyberg@hotmail.se</a> | +46 70 520 03 88</span>
+      <span style="margin-left:auto; color:#9aa4b2">© 2025 Cecilia Nyberg</span>
+    </div>
   </footer>
 </body>
 </html>

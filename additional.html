@@ -1,16 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Cecilia Nyberg</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Additional - Cecilia Nyberg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1115;
+      --card:#151821;
+      --muted:#a3a3a3;
+      --text:#e8e8e8;
+      --accent:#7dd3fc;   /* sky-300 */
+      --accent-2:#a78bfa; /* violet-400 */
+      --ring:rgba(125,211,252,.5);
+      --maxw:1100px;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#0b0d11 0%, #111520 60%, #0f1115 100%);
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{ text-decoration:underline }
+
+    /* Header / Nav (same as projects page) */
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:rgba(10,12,16,.6); border-bottom:1px solid rgba(255,255,255,.376); z-index:20}
+    nav{max-width:var(--maxw); margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between}
+    .brand{font-weight:700; letter-spacing:.3px}
+    .navlinks{display:flex; gap:18px; list-style:none; padding:0; margin:0}
+    .navlinks a{color:#d9e3f0; text-decoration:none; padding:8px 10px; border-radius:10px}
+    .navlinks a:hover{background:rgba(255,255,255,.06)}
+
+    /* Layout */
+    main{max-width:var(--maxw); margin:24px auto; padding:0 20px 80px}
+    h1{font-size:clamp(26px,2.4vw,36px); margin:12px 0 18px}
+    h2{font-size:clamp(20px,2vw,26px); margin:26px 0 12px}
+
+    /* Cards grid */
+    .cards{display:grid; gap:24px; margin-top:10px}
+    .card{
+      background:var(--card);
+      border:2px solid rgba(125,211,252,.3);
+      border-radius:var(--radius);
+      padding:22px 22px 18px;
+      box-shadow:var(--shadow);
+    }
+    .card h3{margin:0 0 8px; font-size:20px}
+    .card p{margin:0 0 12px; color:var(--muted); line-height:1.55}
+    .links{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px}
+    .btn{
+      appearance:none; border:1px solid rgba(255,255,255,.16);
+      padding:10px 14px; border-radius:12px; background:#0f1320; color:#dfe7ff; font-weight:600; text-decoration:none
+    }
+    .btn:hover{border-color:var(--accent); box-shadow:0 0 0 4px var(--ring)}
+    .muted{color:var(--muted)}
+
+    /* Media in cards */
+    .thumb{width:100%; max-height:320px; object-fit:cover; border-radius:12px; border:1px solid rgba(255,255,255,.08); margin:8px 0 12px}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(255,255,255,.06); color:#cbd5e1;}
+    .footwrap{max-width:var(--maxw); margin:0 auto; padding:20px; display:flex; gap:10px; flex-wrap:wrap}
+  </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
   <header>
     <nav>
-      <ul>
+      <div class="brand">Cecilia Nyberg</div>
+      <ul class="navlinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="additional.html">Additional</a></li>
@@ -19,62 +83,72 @@
     </nav>
   </header>
 
+  <main>
+    <h1>Additional Work</h1>
 
-  <section id="thesis">
-    <h2>Bachelor's thesis</h2>
-    <ul>
-        <li>
-            <strong>Accessible Board Game Playing</strong>: 
-            <a href="https://cecnyb.github.io/articles/AccessibleCardPresentationInBoardGames.pdf" target="_blank">Report</a> | 
-            <a href="https://drive.google.com/file/d/1wVrZ3TUVwXZCaCIZuLXTU6MWxHNr-Nfm/view?us
-            p=share_link">Video</a><br>
-            The Bachelor's thesis aimed to make board games more accessible to people with visual impairment. The focus was on representing cards in a more accessible format through an application. The application uses a camera with image recognition to scan cards and match them with the corresponding card in the database. 
-            Then a digital hand is stored in the application, which can be used to play the game. The application was tested with the board game Catan and the results showed that the application was able to recognize the cards with high accuracy.
-        </li>
-    </ul>
-  </section>
+    <!-- Additional items -->
+    <section aria-labelledby="add">
+      <div class="cards">
+        <article class="card">
+          <h3>A pitch on how IKEA might leverage AI</h3>
+          <p class="muted">Concept poster + site + short video outlining opportunities for AI-driven customer experience and operations.</p>
+          <div class="links">
+            <a class="btn" href="https://cecnyb.github.io/articles/annotated-Poster_Group8.pdf" target="_blank" rel="noopener">Poster</a>
+            <a class="btn" href="https://sites.google.com/view/aida-ikea/hem" target="_blank" rel="noopener">Website</a>
+            <a class="btn" href="https://www.youtube.com/watch?v=SszAnp61lOA&si=9axdHOrBDb2MOfgT" target="_blank" rel="noopener">Video</a>
+          </div>
+        </article>
 
-<section id="additional">
-    <h2>Additional</h2>
-    <ul>
-        <li>
-        <strong>A pitch on how IKEA might leverage AI: </strong>
-        <a href="https://cecnyb.github.io/articles/annotated-Poster_Group8.pdf" target="_blank">Poster</a> | 
-            <a href="https://sites.google.com/view/aida-ikea/hem" target="_blank">Website</a> | 
-            <a href="https://www.youtube.com/watch?v=SszAnp61lOA&si=9axdHOrBDb2MOfgT" target="_blank">Video</a><br>
-        </li>
-        <li>
-            <strong>A Podcast on how digitalization is reshaping the food retail industry: </strong>
-            <a href="https://drive.google.com/drive/folders/1C_iyZClZXGihhFFf3j-69nMp5BUZioa8?ths=true" target="_blank">Podcast</a> | 
-                <a href="https://cecnyb.github.io/articles/Podcast_8.pdf" target="_blank">Transcript</a><br>
-                For this podcast, interviews with eight industry experts were conducted on how digitalization is reshaping the food retail industry. The podcast investigates this impact from an economical, sustainable, technological, sociological, legal and political aspect. The role of data in decision-making and the future of the industry were analyzed and discussed.
-            </li>
-        <li>
-            <strong>A website for Jetski Education</strong>
-            <a href="https://github.com/cecnyb/AgileSoftwareProject.git" target="_blank">View on GitHub</a> |
-            <a href="https://drive.google.com/file/d/1TlknvwN3xkVNcJxJ2DwerFsJTPENrg_6/view?usp=sharing&t=120" target="_blank">Product Video Presentation</a>
-            </li>
-    </ul>
-  </section>
+        <article class="card">
+          <h3>Podcast: Digitalization in Food Retail</h3>
+          <p class="muted">
+            Interviews with eight industry experts on how digitalization reshapes food retail — economics, sustainability, technology, sociology, law, policy — and the role of data in decisions.
+          </p>
+          <div class="links">
+            <a class="btn" href="https://drive.google.com/drive/folders/1C_iyZClZXGihhFFf3j-69nMp5BUZioa8?ths=true" target="_blank" rel="noopener">Podcast</a>
+            <a class="btn" href="https://cecnyb.github.io/articles/Podcast_8.pdf" target="_blank" rel="noopener">Transcript</a>
+          </div>
+        </article>
 
-  <section id="certificates">
-    <h2>Certificates</h2>
-    <strong>Certificate of Excellence in Korean Language Program</strong>
-        <a href="https://cecnyb.github.io/certificates/Certificate_of_excellence_korean.pdf" target="_blank">Certificate</a> 
-    
-</section>
+        <article class="card">
+          <h3>Jetski Education Website</h3>
+          <p class="muted">Agile group project delivering a site for jetski education — from requirements to working prototype.</p>
+          <div class="links">
+            <a class="btn" href="https://github.com/cecnyb/AgileSoftwareProject.git" target="_blank" rel="noopener">View on GitHub</a>
+            <a class="btn" href="https://drive.google.com/file/d/1TlknvwN3xkVNcJxJ2DwerFsJTPENrg_6/view?usp=sharing&t=120" target="_blank" rel="noopener">Product Video</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-<section id="skills">
-    <h2>Skills</h2>
-    <p>Python, TensorFlow, PyTorch, Keras, CNN, DNN, LLM, Meta learning, Data Visualization.</p>
-</section>
+    <!-- Certificates -->
+    <section aria-labelledby="certs">
+      <h2 id="certs">Certificates</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Certificate of Excellence — Korean Language Program</h3>
+          <p class="muted">Awarded for outstanding performance.</p>
+          <div class="links">
+            <a class="btn" href="https://cecnyb.github.io/certificates/Certificate_of_excellence_korean.pdf" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
+    <!-- Skills -->
+    <section aria-labelledby="skills">
+      <h2 id="skills">Skills</h2>
+      <div class="card">
+        <p class="muted">Python, TensorFlow, PyTorch, Keras, CNN, DNN, LLM, Meta-learning, Data Visualization.</p>
+      </div>
+    </section>
+  </main>
 
-</main>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Cecilia Nyberg</p>
-</footer>
+  <footer>
+    <div class="footwrap">
+      <span>Contact: <a href="mailto:cecilia.nyberg@hotmail.se">cecilia.nyberg@hotmail.se</a> | +46 70 520 03 88</span>
+      <span style="margin-left:auto; color:#9aa4b2">© 2025 Cecilia Nyberg</span>
+    </div>
+  </footer>
 </body>
 </html>

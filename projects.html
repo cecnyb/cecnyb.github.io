@@ -49,12 +49,33 @@
     .slide-cta{display:flex; gap:12px; flex-wrap:wrap}
     .btn{appearance:none; border:1px solid rgba(255,255,255,.16); padding:10px 14px; border-radius:12px; background:#0f1320; color:#dfe7ff; text-decoration:none; font-weight:600}
     .btn:hover{border-color:var(--accent); box-shadow:0 0 0 4px var(--ring)}
+
+    /* Shared thumbnail style; each slide sets --bg-img */
     .slide-art{
-      height:300px; border-radius:14px; background:radial-gradient( 120px 120px at 20% 30%, rgba(125,211,252,.4), transparent 60%),
-                 radial-gradient( 140px 140px at 80% 30%, rgba(167,139,250,.35), transparent 60%),
-                 linear-gradient(135deg,#0f1320,#1a1f2e);
+      position:relative;
+      height:300px;
+      border-radius:14px;
       border:1px solid rgba(255,255,255,.08);
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      background-image:
+        var(--bg-img),
+        radial-gradient(120px 120px at 20% 30%, rgba(125,211,252,.35), transparent 60%),
+        radial-gradient(140px 140px at 80% 30%, rgba(167,139,250,.30), transparent 60%),
+        linear-gradient(135deg,#0f1320,#1a1f2e);
+      background-size: 100%;
+      background-position: center, center, center, center;
+      background-repeat: no-repeat;
+      overflow:hidden;
     }
+    .slide-art::after{
+      content:"";
+      position:absolute; inset:0;
+      border-radius:14px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
+      background: linear-gradient(to bottom, rgba(0,0,0,.08), rgba(0,0,0,.22));
+      pointer-events:none;
+    }
+
     .carousel-controls{position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between; pointer-events:none}
     .control{pointer-events:auto; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.15); width:40px; height:40px; border-radius:50%; display:grid; place-items:center; margin:0 10px; cursor:pointer}
     .control:hover{background:rgba(0,0,0,.5)}
@@ -68,10 +89,10 @@
     }
 
     /* ======== Projects list ======== */
-    .projects-list{margin-top:68px; display:grid; gap:28px} /* increased gap */
+    .projects-list{margin-top:68px; display:grid; gap:28px}
     .project-card{
       background:var(--card);
-      border:2px solid rgba(125,211,252,.3); /* added visible border */
+      border:2px solid rgba(125,211,252,.3);
       border-radius:var(--radius);
       padding:22px 22px 20px;
       box-shadow:var(--shadow);
@@ -112,17 +133,47 @@
         <article class="slide" aria-roledescription="slide">
           <div class="slide-inner">
             <div>
-              <h2>Sparse Matrix Optimization with Meta‑Learning</h2>
-              <p>Extends WACO with meta‑learning to adapt across hardware with minimal data. On 300 samples from a new machine, our meta‑trained model outperformed the original WACO.</p>
+              <h2>Master’s Thesis: Learnable Dynamic Voltage Optimization in Radios</h2>
+              <p>My MSc thesis at Ericsson and Chalmers focused on predicting and adapting 5G radio power consumption using machine learning. The goal was to minimize energy usage without degrading network performance.</p>
+              <div class="slide-cta">
+                <a class="btn" href="https://cecnyb.github.io/articles/MastersThesis_DynamicVoltageOptimization.pdf" target="_blank" rel="noopener">Read Thesis</a>
+              </div>
+            </div>
+            <div class="slide-art" style="--bg-img: url('assets/mastersthesis.jpg');" role="img" aria-label="Thumbnail for Master’s Thesis"></div>
+          </div>
+        </article>
+
+        <article class="slide" aria-roledescription="slide">
+          <div class="slide-inner">
+            <div>
+              <h2>Bachelor’s Thesis: Accessible Board Game Playing</h2>
+              <p>My BSc thesis focused on making board games more accessible for people with visual impairment. We developed a camera + image recognition system that converted physical cards into a digital hand, tested on <em>Catan</em> with high recognition accuracy.</p>
+              <div class="slide-cta">
+                <a class="btn" href="https://cecnyb.github.io/articles/AccessibleCardPresentationInBoardGames.pdf" target="_blank" rel="noopener">Read Report</a>
+                <a class="btn" href="https://drive.google.com/file/d/1wVrZ3TUVwXZCaCIZuLXTU6MWxHNr-Nfm/view?usp=share_link" target="_blank" rel="noopener">Watch Video</a>
+              </div>
+            </div>
+            <div class="slide-art" style="--bg-img: url('assets/catan3.jpg');" role="img" aria-label="Thumbnail for Bachelor’s Thesis"></div>
+          </div>
+      </article>
+
+
+        <!-- Slide 2 -->
+        <article class="slide" aria-roledescription="slide">
+          <div class="slide-inner">
+            <div>
+              <h2>Sparse Matrix Optimization with Meta-Learning</h2>
+              <p>Extends WACO with meta-learning to adapt across hardware with minimal data. On 300 samples from a new machine, our meta-trained model outperformed the original WACO.</p>
               <div class="slide-cta">
                 <a class="btn" href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM.git" target="_blank" rel="noopener">View on GitHub</a>
                 <a class="btn" href="https://cecnyb.github.io/articles/WACO_WITH_META_LEARNING.pdf" target="_blank" rel="noopener">Read article</a>
               </div>
             </div>
-            <div class="slide-art" role="img" aria-label="Abstract artwork for sparse matrix optimization"></div>
+            <div class="slide-art" style="--bg-img: url('assets/WACO.png');" role="img" aria-label="Abstract artwork for sparse matrix optimization"></div>
           </div>
         </article>
-        <!-- Slide 2 -->
+
+        <!-- Slide 3 -->
         <article class="slide" aria-roledescription="slide">
           <div class="slide-inner">
             <div>
@@ -133,24 +184,26 @@
                 <a class="btn" href="https://cecnyb.github.io/articles/Melanoma_detection.pdf" target="_blank" rel="noopener">Read article</a>
               </div>
             </div>
-            <div class="slide-art" role="img" aria-label="Abstract artwork for melanoma project"></div>
+            <div class="slide-art" style="--bg-img: url('assets/melanoma.png');" role="img" aria-label="Abstract artwork for melanoma project"></div>
           </div>
         </article>
-        <!-- Slide 3 -->
+
+        <!-- Slide 4 -->
         <article class="slide" aria-roledescription="slide">
           <div class="slide-inner">
             <div>
-              <h2>QA RAG with Llama‑2 & Mistral</h2>
-              <p>Scraped quotes website → embedded to Pinecone. Best combo: e5‑base embeddings + Mistral, outperforming GPT‑3.5‑turbo on this task.</p>
+              <h2>QA RAG with Llama-2 & Mistral</h2>
+              <p>Scraped quotes website → embedded to Pinecone. Best combo: e5-base embeddings + Mistral, outperforming GPT-3.5-turbo on this task.</p>
               <div class="slide-cta">
                 <a class="btn" href="https://github.com/rikardradovac/RAG.git" target="_blank" rel="noopener">View on GitHub</a>
                 <a class="btn" href="https://cecnyb.github.io/articles/RAG_mistral_llama2.pdf" target="_blank" rel="noopener">Read article</a>
               </div>
             </div>
-            <div class="slide-art" role="img" aria-label="Abstract artwork for RAG project"></div>
+            <div class="slide-art" style="--bg-img: url('assets/RAGQA.png');" role="img" aria-label="Abstract artwork for RAG project"></div>
           </div>
         </article>
-        <!-- Slide 4 -->
+
+        <!-- Slide 5 -->
         <article class="slide" aria-roledescription="slide">
           <div class="slide-inner">
             <div>
@@ -161,10 +214,11 @@
                 <a class="btn" href="https://cecnyb.github.io/articles/Final_Project_Prompt_Eng.pdf" target="_blank" rel="noopener">Group report</a>
               </div>
             </div>
-            <div class="slide-art" role="img" aria-label="Abstract artwork for financial QA project"></div>
+            <div class="slide-art" style="--bg-img: url('assets/ARKMan.png');" role="img" aria-label="Abstract artwork for financial QA project"></div>
           </div>
         </article>
       </div>
+
       <div class="carousel-controls" aria-hidden="false">
         <button class="control" id="prev" aria-label="Previous slide">&#9664;</button>
         <button class="control" id="next" aria-label="Next slide">&#9654;</button>
@@ -174,14 +228,37 @@
         <button class="dot" role="tab" aria-selected="false" aria-controls="s2"></button>
         <button class="dot" role="tab" aria-selected="false" aria-controls="s3"></button>
         <button class="dot" role="tab" aria-selected="false" aria-controls="s4"></button>
+        <button class="dot" role="tab" aria-selected="false" aria-controls="s5"></button>
       </div>
     </section>
 
-    <!-- ===== Projects List (unchanged content, restyled) ===== -->
+    <!-- ===== Projects List ===== -->
     <section id="projects" class="projects-list">
       <article class="project-card">
+        <h3>Master’s Thesis: Dynamic Voltage Optimization in Radios</h3>
+        <p>The thesis focused on Learnable Dynamic Voltage Optimization in radio units at Ericsson. 
+          It combined classification and regression models with traffic-aware thresholds to reduce power consumption while maintaining performance. 
+          The project also involved explainability using Shapley Additive Explanations (SHAP).</p>
+        <div class="links">
+          <a class="btn" href="https://cecnyb.github.io/articles/MastersThesis_DynamicVoltageOptimization.pdf" target="_blank" rel="noopener">Read Thesis</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Bachelor's Thesis: Accessible Board Game Playing</h3>
+         <p>
+          The thesis focused on making board games more accessible for people with visual impairment by converting physical cards into a digital hand via camera + image recognition.
+          It was tested on <em>Catan</em> and achieved high card recognition accuracy.
+        </p>
+        <div class="links">
+          <a class="btn" href="https://cecnyb.github.io/articles/AccessibleCardPresentationInBoardGames.pdf" target="_blank" rel="noopener">Report</a>
+          <a class="btn" href="https://drive.google.com/file/d/1wVrZ3TUVwXZCaCIZuLXTU6MWxHNr-Nfm/view?usp=share_link" target="_blank" rel="noopener">Video</a>
+        </div>
+      </article>
+
+      <article class="project-card">
         <h3>Sparse Matrix Optimization with Meta-Learning</h3>
-        <p>This project builds on WACO by integrating meta‑learning to reduce re‑training time when adapting to new hardware. With just 300 samples, it outperformed the original WACO on a new machine.</p>
+        <p>This project builds on WACO by integrating meta-learning to reduce re-training time when adapting to new hardware. With just 300 samples, it outperformed the original WACO on a new machine.</p>
         <div class="links">
           <a class="btn" href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM.git" target="_blank" rel="noopener">View on GitHub</a>
           <a class="btn" href="https://cecnyb.github.io/articles/WACO_WITH_META_LEARNING.pdf" target="_blank" rel="noopener">Read Article</a>
@@ -190,7 +267,7 @@
 
       <article class="project-card">
         <h3>Detection of Melanoma in Images</h3>
-        <p>Transfer learning with ConvNeXT. Accuracy 0.88 on held‑out test set.</p>
+        <p>Transfer learning with ConvNeXT. Accuracy 0.88 on held-out test set.</p>
         <div class="links">
           <a class="btn" href="https://github.com/cecnyb/Melanoma_detection.git" target="_blank" rel="noopener">View on GitHub</a>
           <a class="btn" href="https://cecnyb.github.io/articles/Melanoma_detection.pdf" target="_blank" rel="noopener">Read Article</a>
@@ -198,8 +275,8 @@
       </article>
 
       <article class="project-card">
-        <h3>Question Answering RAG Model with Llama‑2 and Mistral</h3>
-        <p>RAG pipeline using Pinecone vector DB. Best config: e5‑base + Mistral, beating GPT‑3.5‑turbo on this dataset.</p>
+        <h3>Question Answering RAG Model with Llama-2 and Mistral</h3>
+        <p>RAG pipeline using Pinecone vector DB. Best config: e5-base + Mistral, beating GPT-3.5-turbo on this dataset.</p>
         <div class="links">
           <a class="btn" href="https://github.com/rikardradovac/RAG.git" target="_blank" rel="noopener">View on GitHub</a>
           <a class="btn" href="https://cecnyb.github.io/articles/RAG_mistral_llama2.pdf" target="_blank" rel="noopener">Read Article</a>
@@ -208,7 +285,7 @@
 
       <article class="project-card">
         <h3>Advanced RAG for Financial QA</h3>
-        <p>Financial QA using ARKMan, hybrid search, chain‑of‑thought, and query decomposition; FinQA dataset for evaluation.</p>
+        <p>Financial QA using ARKMan, hybrid search, chain-of-thought, and query decomposition; FinQA dataset for evaluation.</p>
         <div class="links">
           <a class="btn" href="https://github.com/cecnyb/Advanced_RAG_Financial_QA.git" target="_blank" rel="noopener">View on GitHub</a>
           <a class="btn" href="https://cecnyb.github.io/articles/Final_Project_Prompt_Eng.pdf" target="_blank" rel="noopener">Group Report</a>
@@ -236,8 +313,8 @@
       </article>
 
       <article class="project-card">
-        <h3>Non‑Linear Energy Optimization in Network</h3>
-        <p>11‑node grid model minimizing generation cost while meeting demand (active/reactive). Best found cost: 186.29 SEK (non‑convex; not guaranteed global optimum).</p>
+        <h3>Non-Linear Energy Optimization in Network</h3>
+        <p>11-node grid model minimizing generation cost while meeting demand (active/reactive). Best found cost: 186.29 SEK (non-convex; not guaranteed global optimum).</p>
         <div class="links">
           <a class="btn" href="https://cecnyb.github.io/articles/Planning_of_electricity_production_and_transmission-1.pdf" target="_blank" rel="noopener">Read Article</a>
         </div>
@@ -253,8 +330,8 @@
       </article>
 
       <article class="project-card">
-        <h3>Classifying Pro/Anti COVID‑19 Vaccine Comments</h3>
-        <p>Best baseline: Logistic Regression + TF‑IDF (Acc 0.89) on annotated social media comments.</p>
+        <h3>Classifying Pro/Anti COVID-19 Vaccine Comments</h3>
+        <p>Best baseline: Logistic Regression + TF-IDF (Acc 0.89) on annotated social media comments.</p>
         <div class="links">
           <a class="btn" href="https://github.com/cecnyb/Covid_comment_classification.git" target="_blank" rel="noopener">View on GitHub</a>
           <a class="btn" href="https://cecnyb.github.io/articles/Document_classifier_covid.pdf" target="_blank" rel="noopener">Read Report</a>
@@ -262,7 +339,7 @@
       </article>
 
       <article class="project-card">
-        <h3>Reinforcement Learning for Tic‑Tac‑Toe</h3>
+        <h3>Reinforcement Learning for Tic-Tac-Toe</h3>
         <p>MCTS with UCT. Win rate: 0.86 vs random; 0.83 vs blocking strategy.</p>
         <div class="links">
           <a class="btn" href="https://github.com/cecnyb/RL_tic_tac_toe.git" target="_blank" rel="noopener">View on GitHub</a>
@@ -279,7 +356,7 @@
       </article>
 
       <article class="project-card">
-        <h3>N‑Gram Model: Nobel Prize Motivations</h3>
+        <h3>N-Gram Model: Nobel Prize Motivations</h3>
         <p>Deterministic bigram per category achieved highest semantic similarity (0.56) and strong BLEU on this dataset.</p>
         <div class="links">
           <a class="btn" href="https://github.com/cecnyb/Nobel_prize_winner_motivations.git" target="_blank" rel="noopener">View on GitHub</a>
@@ -289,7 +366,7 @@
 
       <article class="project-card">
         <h3>IBM Translation Model</h3>
-        <p>IBM Model 1 on parallel EN‑SV‑DE‑FR corpus.</p>
+        <p>IBM Model 1 on parallel EN-SV-DE-FR corpus.</p>
         <div class="links">
           <a class="btn" href="https://github.com/cecnyb/IBM_translation_model.git" target="_blank" rel="noopener">View on GitHub</a>
           <a class="btn" href="https://cecnyb.github.io/articles/annotated-Module5Goup60.pdf" target="_blank" rel="noopener">Read Report</a>
