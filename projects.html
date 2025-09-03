@@ -404,7 +404,7 @@
       function startAuto(){
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         stopAuto();
-        auto = setInterval(()=> setIndex(index+1), 2500);
+        auto = setInterval(()=> setIndex(index+1), 2900);
       }
       function stopAuto(){ if(auto) clearInterval(auto); }
 
