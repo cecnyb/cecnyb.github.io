@@ -108,6 +108,57 @@
 
     /* Accessibility */
     .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .video-modal.is-open {
+      display: flex;
+    }
+
+    .video-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+    }
+
+    .video-modal-content {
+      position: relative;
+      z-index: 1;
+      width: min(900px, 95vw);
+      background: #111;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .video-modal-content video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .video-modal-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 36px;
+      height: 36px;
+      border: none;
+      border-radius: 999px;
+      background: white;
+      color: black;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -157,6 +208,36 @@
           </div>
       </article>
 
+      <article class="slide" aria-roledescription="slide">
+        <div class="slide-inner">
+          <div>
+            <h2>LLM Assistant for Skincare Web Application</h2>
+            <p>
+              Developed a language model-based assistant for a skincare web application,
+              integrated with product data to provide personalized recommendations.
+              It runs Llama 3 locally through Ollama and includes simple memory functionality.
+              The project consists of three components: the agent app, the backend server,
+              and the web app, which communicate through a REST API.
+            </p>
+            <div class="slide-cta">
+              <a
+                class="btn"
+                href="https://github.com/cecnyb/ai-skincare-shopping-assistant"
+                target="_blank"
+                rel="noopener"
+              >View on GitHub </a>
+              <button class="btn open-skincare-demo" type="button">Demo Video</button>
+            </div>
+          </div>
+          <div
+            class="slide-art"
+            style="--bg-img: url('assets/skincareAssistant.png');"
+            role="img"
+            aria-label="Abstract artwork for LLM assistant project"
+          ></div>
+        </div>
+      </article>
+
 
         <!-- Slide 2 -->
         <article class="slide" aria-roledescription="slide">
@@ -165,7 +246,7 @@
               <h2>Sparse Matrix Optimization with Meta-Learning</h2>
               <p>Extends WACO with meta-learning to adapt across hardware with minimal data. On 300 samples from a new machine, our meta-trained model outperformed the original WACO.</p>
               <div class="slide-cta">
-                <a class="btn" href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM.git" target="_blank" rel="noopener">View on GitHub</a>
+                <a class="btn" href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM" target="_blank" rel="noopener">View on GitHub</a>
                 <a class="btn" href="https://cecnyb.github.io/articles/WACO_WITH_META_LEARNING.pdf" target="_blank" rel="noopener">Read article</a>
               </div>
             </div>
@@ -257,11 +338,20 @@
       </article>
 
       <article class="project-card">
-        <h3>Sparse Matrix Optimization with Meta-Learning</h3>
-        <p>This project builds on WACO by integrating meta-learning to reduce re-training time when adapting to new hardware. With just 300 samples, it outperformed the original WACO on a new machine.</p>
+        <h3>LLM Assistant for Skincare Web Application</h3>
+        <p>
+          This project is a skincare web application with an integrated language model-based assistant.
+          The product and review data are loaded from a Kaggle skincare dataset. The assistant runs
+          Llama 3 locally through Ollama and includes simple memory functionality.
+        </p>
         <div class="links">
-          <a class="btn" href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM.git" target="_blank" rel="noopener">View on GitHub</a>
-          <a class="btn" href="https://cecnyb.github.io/articles/WACO_WITH_META_LEARNING.pdf" target="_blank" rel="noopener">Read Article</a>
+          <a class="btn"
+            href="https://github.com/cecnyb/ai-skincare-shopping-assistant"
+            target="_blank"
+            rel="noopener">
+            View on GitHub
+          </a>
+          <button class="btn open-skincare-demo" type="button">Demo Video</button>
         </div>
       </article>
 
@@ -435,6 +525,52 @@
       document.querySelector('.carousel').addEventListener('mouseenter', stopAuto);
       document.querySelector('.carousel').addEventListener('mouseleave', startAuto);
     })();
+  </script>
+    <div class="video-modal" id="skincare-demo-modal" aria-hidden="true">
+    <div class="video-modal-backdrop" id="close-skincare-demo-backdrop"></div>
+
+    <div class="video-modal-content" role="dialog" aria-modal="true" aria-label="Skincare assistant demo video">
+      <button class="video-modal-close" type="button" id="close-skincare-demo">
+        ×
+      </button>
+
+      <video id="skincare-demo-video" controls preload="metadata">
+        <source src="assets/AgentRecommendation.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <script>
+    const openDemoButtons = document.querySelectorAll(".open-skincare-demo");
+    const modal = document.getElementById("skincare-demo-modal");
+    const closeDemoButton = document.getElementById("close-skincare-demo");
+    const closeBackdrop = document.getElementById("close-skincare-demo-backdrop");
+    const video = document.getElementById("skincare-demo-video");
+
+    function openModal() {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeModal() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      video.pause();
+      video.currentTime = 0;
+    }
+
+    openDemoButtons.forEach((button) => {
+      button.addEventListener("click", openModal);
+    });
+    closeDemoButton.addEventListener("click", closeModal);
+    closeBackdrop.addEventListener("click", closeModal);
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) {
+        closeModal();
+      }
+    });
   </script>
 </body>
 </html>
