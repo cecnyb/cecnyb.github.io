@@ -1,0 +1,709 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+  <div class="hero-wrap">
+  <nav class="page-nav" aria-label="Page navigation">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research Interests</a></li>
+    <li><a href="#experience">Work Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#publications">Publications</a></li>
+  </ul>
+</nav>
+    <div class="glow"></div>
+    <section class="hero" id="about">
+
+      <div class="hero-card">
+        <img src="/images/name.png" alt="Cecilia Nyberg" class="profile-pic" />
+        <p class="name-tag">Cecilia<br>Nyberg</p>
+        <p class="subtitle">Data Science & AI</p>
+        <div class="cta-wrap">
+          <a class="btn btn-primary" href="/projects">View Projects</a>
+          <a class="btn" href="https://www.linkedin.com/in/cecilianyberg/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/cecnyb" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="mailto:cecilia.nyberg@hotmail.se">Email</a>
+        </div>
+		<hr class="divider" />
+          <p class="section-label">Get in touch</p>
+          <ul class="contact-links">
+            <li><a class="chip accent" href="mailto:cecilia.nyberg@hotmail.se">cecilia.nyberg@hotmail.se</a></li>
+            <li><a class="chip accent" href="mailto:1cecnyb@snu.ac.kr">cecnyb99@gmail.com</a></li>
+
+          </ul>
+      </div>
+
+      <article class="about">
+      <div class="about-text">
+        <p class="section-label">About me</p>
+        <h2>AI Engineer & LLM Researcher</h2>
+
+        <p>
+          Hello! I'm Cecilia Nyberg, an AI Engineer and researcher focused on LLM agents,
+          applied deep learning, and AI systems.
+        </p>
+
+        <p>
+          My recent work focuses on tool-using LLMs, including fine-tuning models for
+          multi-step tool use, improving robustness to prompt-structure changes, and
+          building agent systems with reasoning, retrieval, memory, and function calling.
+        </p>
+
+        <p>
+          I completed my Master's thesis at Ericsson, where I applied machine learning and
+          time-series forecasting to optimize energy usage in radio units. A manuscript based
+          on this work is currently under minor revision.
+        </p>
+
+        <p>
+          I am currently a visiting researcher at the Deep Learning Lab at Seoul National
+          University, where my research focuses on LLM agents, tool learning, and applied AI
+          systems. My current work includes a paper on prompt-robust tool learning for
+          LLM-based ship inspection workflows.
+        </p>
+
+        <p>
+          Feel free to explore my projects and experience on this site.
+        </p>
+      </div>
+
+      <div class="about-photo-col">
+        <img src="/images/Ericsson2.jpg" alt="Cecilia Nyberg" class="about-photo" />
+      </div>
+    </article>
+
+ </section>
+    <section class="research-interests" id="research">
+      <p class="section-label">Research interests</p>
+      <h2>Research Areas</h2>
+
+      <div class="interest-grid">
+        <div class="interest-card">
+          <h3>LLM Agents & Tool Use</h3>
+          <p>
+            Fine-tuning and evaluating language models for multi-step tool use,
+            function calling, and structured decision-making workflows.
+          </p>
+        </div>
+
+        <div class="interest-card">
+          <h3>Efficient and Sustainable AI</h3>
+          <p>
+            Exploring methods that improve model performance with limited labeled data or constrained deployment settings,
+            using approaches such as quantization, transfer learning and data-efficient training strategies.
+          </p>
+        </div>
+
+        <div class="interest-card">
+          <h3>Applied Deep Learning</h3>
+          <p>
+            Designing machine-learning systems for real-world applications, including
+            time-series forecasting, multiared bandits, and operational decision support.
+          </p>
+        </div>
+
+        <div class="interest-card">
+          <h3>AI for Health Care & Image Recognition</h3>
+          <p>
+            Interested in applying deep learning and LLM-based systems to healthcare-related
+            problems, including image recognition, workflow support
+            and interpretable decision support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  <!-- ===== Timeline ===== -->
+<section class="timeline-section">
+
+  <!-- Work Experience -->
+  <div class="timeline-group" id="experience">
+    <p class="section-label">Work Experience</p>
+    <h2>Experience</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">Oct 2025 — Present</div>
+        <div class="timeline-content">
+          <h3>AI Engineer</h3>
+          <p class="timeline-org">LLM Core AI, Inc. · Full-time · Seoul, South Korea</p>
+          <p>LLM-based agentic automation systems. Agentic AI development and large language model engineering.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jul 2025 — Present</div>
+        <div class="timeline-content">
+          <h3>Researcher</h3>
+          <p class="timeline-org">Seoul National University · Seoul, South Korea</p>
+          <p>Research on efficient LLMs and intelligent agents using LangGraph and large language models.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jan 2025 — Jun 2025</div>
+        <div class="timeline-content">
+          <h3>Master Thesis Student</h3>
+          <p class="timeline-org">Ericsson · Stockholm, Sweden</p>
+          <p>Time series forecasting for energy-efficient dynamic voltage control in radio units.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jun 2024 — Jul 2024</div>
+        <div class="timeline-content">
+          <h3>Software Developer</h3>
+          <p class="timeline-org">Ongoing · Full-time · Gothenburg, Sweden</p>
+          <p>Implementation of additional service selection functionality for transport bookings in WMS. C#, HTML and more.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="timeline-group" id="education">
+    <p class="section-label">Education</p>
+    <h2>Education</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">Aug 2023 — Jun 2025</div>
+        <div class="timeline-content">
+          <h3>Master's Degree, Data Science and AI</h3>
+          <p class="timeline-org">Chalmers University of Technology</p>
+          <p>PyTorch, image recognition, prompt engineering, meta-learning and more.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Sep 2024 — Dec 2024</div>
+        <div class="timeline-content">
+          <h3>Graduate Student, Data Science and AI</h3>
+          <p class="timeline-org">Seoul National University</p>
+          <p>Graduate courses focused on LLMs, prompt engineering and machine learning techniques.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jun 2023 — Aug 2023</div>
+        <div class="timeline-content">
+          <h3>Coursework in Economics</h3>
+          <p class="timeline-org">University of California, Berkeley</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Aug 2020 — Jun 2023</div>
+        <div class="timeline-content">
+          <h3>Bachelor's Degree, Industrial Engineering and Management</h3>
+          <p class="timeline-org">Chalmers University of Technology</p>
+          <p>Java, financial analysis and more.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Publications -->
+  <div class="timeline-group" id="publications">
+    <p class="section-label">Publications</p>
+    <h2>Publications</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">2026</div>
+        <div class="timeline-content">
+          <h3>Learning to Optimize Voltage Level for Energy-Efficient Radios. C. Nyberg et al.</h3>
+          <p class="timeline-org">IEEE Transactions on Machine Learning in Communications and Networking</p>
+          <p>Manuscript under minor revision. Reference: TMLCN-08-25-0177.R1</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+   
+  </div>
+</Layout>
+
+
+<style>
+  .glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(180,140,60,0.07) 0%, transparent 65%);
+    top: -120px;
+    right: -60px;
+    pointer-events: none;
+  }
+  .hero-wrap { position: relative; }
+  .hero {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .page-nav {
+  position: fixed;
+  top: 80px;
+  left: 30px;
+  width: 160px;
+  padding: 20px 16px;
+  background: rgba(255, 255, 255, 0.17);
+  border: 0.5px solid rgba(196,160,80,0.15);
+  border-radius: var(--radius);
+  backdrop-filter: blur(14px);
+  z-index: 10;
+}
+
+.page-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.page-nav ul li a {
+  display: block;
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+  transition: color 0.2s, background 0.2s;
+  line-height: 1.4;
+}
+
+.page-nav ul li a:hover {
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.04);
+}
+
+.page-nav ul li a.active {
+  color: var(--gold-soft);
+  background: rgba(150,109,17,0.12);
+  border-left: 2px solid var(--gold-soft);
+  padding-left: 8px;
+}
+
+@media (max-width: 900px) {
+  .page-nav { display: none; }
+}
+
+  /* ===== Left profile card ===== */
+  .hero-card {
+    background: var(--card);
+    border: 0.5px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 28px 18px;
+    text-align: center;
+    box-shadow: var(--shadow), inset 0 1px 0 rgba(196,160,80,0.08);
+  }
+  .profile-pic {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 0 0px;
+    display: block;
+    margin: 0 auto;
+    border: 0.5px solid rgba(196,160,80,0.35);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  .name-tag {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 420;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 12px 0 4px;
+    line-height: 1.4;
+  }
+  .subtitle {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin: 3px 0px 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .cta-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+	margin: 0px 0px 0px;
+  }
+
+  /* ===== Right about card ===== */
+  .about {
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+    border: none;
+    padding: 48px 32px;
+    box-shadow: none;
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 49px;
+    align-items: center;
+  }
+
+  /* Atmospheric glow behind the text */
+  .about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(ellipse 80% 60% at 30% 50%, rgba(196,160,80,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 80% at 70% 40%, rgba(30,60,120,0.08) 0%, transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+  }
+
+  .about-text h2 {
+    font-family: var(--font-serif);
+    font-size: 29px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.92);
+    margin: 0 0 18px;
+    line-height: 1.25;
+    letter-spacing: 0.2px;
+  }
+
+  /* Section label above heading */
+  .about-text .section-label {
+    margin-bottom: 8px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.8;
+    margin: 0 0 1px;
+    font-weight: 350;
+    /* This is what makes text feel like it floats */
+    text-shadow: 0 2px 10px rgba(105, 98, 98, 0.87);
+  }
+  .divider {
+    border: none;
+    border-top: 0.5px solid rgba(196,160,80,0.1);
+    margin: 18px 0;
+  }
+  .contact-links {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .chip {
+    border: 0.5px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
+    padding: 5px 14px;
+    font-size: 11px;
+    color: var(--text-dim);
+    background: rgba(255,255,255,0.03);
+    letter-spacing: 0.3px;
+  }
+  .chip.accent {
+    border-color: rgba(196,160,80,0.3);
+    color: rgba(9, 8, 4, 0.85);
+    background: rgba(160,120,40,0.1);
+  }
+
+  /* ===== Photo inside about card ===== */
+.about-photo-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
+}
+
+.about-photo {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  object-position: 0 -30px;
+  border-radius: 14px;
+  border: 1px solid rgba(220, 205, 163, 0.32);
+  box-shadow: 0 20px 44px rgba(21, 48, 72, 0.28);
+  display: block;
+}
+
+ /* Interestes */
+.research-interests {
+  margin-top: 0px;
+  padding: 40px 32px;
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+}
+
+/* Atmospheric glow behind */
+.research-interests::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 50%, rgba(196,160,80,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(31,70,104,0.08) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.research-interests h2 {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  margin: 0 0 20px;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.interest-card {
+  border: 0.5px solid rgba(196,160,80,0.12);
+  border-radius: calc(var(--radius) - 4px);
+  padding: 20px 22px;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(196,160,80,0.05);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.interest-card:hover {
+  border-color: rgba(196,160,80,0.25);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3), inset 0 1px 0 rgba(196,160,80,0.08);
+}
+
+.interest-card h3 {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gold-soft);
+  margin: 0 0 8px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.interest-card p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+  font-weight: 300;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* ===== Timeline ===== */
+.timeline-section {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding-bottom: 80px;
+}
+
+.timeline-group h2 {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  margin: 0 0 28px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 24px;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 0.5px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(196,160,80,0.4) 10%,
+    rgba(196,160,80,0.4) 90%,
+    transparent
+  );
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  padding-bottom: 36px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dot on the line */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(196,160,80,0.6);
+  border: 0.5px solid rgba(196,160,80,0.9);
+  box-shadow: 0 0 8px rgba(196,160,80,0.3);
+}
+
+.timeline-date {
+  font-size: 11px;
+  color: var(--champagne);
+  letter-spacing: 0.5px;
+  padding-top: 4px;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.timeline-content h3 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  margin: 0 0 4px;
+}
+
+.timeline-org {
+  font-size: 11px;
+  color: var(--gold-soft);
+  letter-spacing: 0.5px;
+  margin: 0 0 8px !important;
+  text-transform: uppercase;
+}
+
+.timeline-content p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.42);
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 300;
+}
+
+@media (max-width: 600px) {
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .timeline-date {
+    text-align: left;
+  }
+}
+
+@media (max-width: 760px) {
+  .interest-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    padding: 36px 8px;
+  }
+
+  .about::before {
+    inset: 0 -20px;
+  }
+
+  .about-photo {
+    height: 280px;
+    max-width: 220px;
+  }
+}
+#about {
+  scroll-margin-top: 70px;
+}
+
+#research, #experience, #education, #publications {
+  scroll-margin-top: 100px;
+}
+</style>
+
+
+<script> 
+
+// Timeline reveal
+const timelineItems = document.querySelectorAll('.timeline-item');
+const timelineObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, 100);
+      timelineObserver.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: '0px 0px -60px 0px' });
+
+timelineItems.forEach(item => timelineObserver.observe(item));
+
+// Home page scroll spy
+const homeNavLinks = document.querySelectorAll('.page-nav a');
+const homeSections = document.querySelectorAll('#about, #research, #experience, #education, #publications');
+
+let activeSection = null;
+
+window.addEventListener('scroll', () => {
+  let closest = null;
+  let closestDistance = Infinity;
+
+  homeSections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const distance = Math.abs(rect.top - window.innerHeight * 0.3);
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closest = section;
+    }
+  });
+
+  if (closest && closest.id !== activeSection) {
+    activeSection = closest.id;
+    homeNavLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + activeSection) {
+        link.classList.add('active');
+      }
+    });
+  }
+}, { passive: true });
+</script>
