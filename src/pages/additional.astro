@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Additional">
+  <div class="hero-wrap">
+    <div class="glow"></div>
+
+    <p class="section-label">More Work</p>
+    <h1>Additional Work</h1>
+
+    <!-- ===== Additional items ===== -->
+    <section class="cards">
+
+      <article class="card">
+        <p class="section-label">AI Strategy</p>
+        <h3>A Pitch on How IKEA Might Leverage AI</h3>
+        <p>Concept poster, site, and short video outlining opportunities for AI-driven customer experience and operations.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-primary" href="https://cecnyb.github.io/articles/annotated-Poster_Group8.pdf" target="_blank" rel="noopener">Poster</a>
+          <a class="btn" href="https://sites.google.com/view/aida-ikea/hem" target="_blank" rel="noopener">Website</a>
+          <a class="btn" href="https://www.youtube.com/watch?v=SszAnp61lOA&si=9axdHOrBDb2MOfgT" target="_blank" rel="noopener">Video</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <p class="section-label">Podcast</p>
+        <h3>Digitalization in Food Retail</h3>
+        <p>Interviews with eight industry experts on how digitalization reshapes food retail — economics, sustainability, technology, sociology, law, policy — and the role of data in decisions.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-primary" href="https://drive.google.com/drive/folders/1C_iyZClZXGihhFFf3j-69nMp5BUZioa8?ths=true" target="_blank" rel="noopener">Podcast</a>
+          <a class="btn" href="https://cecnyb.github.io/articles/Podcast_8.pdf" target="_blank" rel="noopener">Transcript</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <p class="section-label">Agile Project</p>
+        <h3>Jetski Education Website</h3>
+        <p>Agile group project delivering a site for jetski education — from requirements to working prototype.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-primary" href="https://github.com/cecnyb/AgileSoftwareProject.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn" href="https://drive.google.com/file/d/1TlknvwN3xkVNcJxJ2DwerFsJTPENrg_6/view?usp=sharing&t=120" target="_blank" rel="noopener">Product Video</a>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section class="skills-section">
+      <p class="section-label">Technical Skills</p>
+      <h2>Skills</h2>
+      <div class="skills-card">
+        <p>Python, TensorFlow, PyTorch, Keras, CNN, DNN, LLM, Meta-learning, Data Visualization.</p>
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<style>
+  .glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(150,109,17,0.08) 0%, transparent 65%);
+    top: -100px;
+    right: -60px;
+    pointer-events: none;
+  }
+  .hero-wrap { position: relative; }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 400;
+    color: rgba(255,254,252,0.8);
+    margin: 0 0 32px;
+    letter-spacing: 0.3px;
+  }
+
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(255,254,252,0.8);
+    margin: 0 0 16px;
+  }
+
+  /* ===== Cards ===== */
+  .cards {
+    display: grid;
+    gap: 20px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.025);
+    border: 0.5px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 26px 28px;
+    box-shadow: var(--shadow), inset 0 1px 0 rgba(196,160,80,0.05);
+    backdrop-filter: blur(14px);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    border-color: rgba(150,109,17,0.45);
+    box-shadow: var(--shadow), 0 0 0 1px rgba(150,109,17,0.12);
+  }
+
+  .card h3 {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.88);
+    margin: 0 0 12px;
+  }
+
+  .card p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.8;
+    margin: 0;
+    font-weight: 300;
+  }
+
+  .divider {
+    height: 0.5px;
+    background: rgba(196,160,80,0.12);
+    margin: 16px 0;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ===== Skills ===== */
+  .skills-section {
+    margin-top: 48px;
+    position: relative;
+    isolation: isolate;
+  }
+
+  .skills-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 50%, rgba(196,160,80,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 80% at 80% 50%, rgba(31,70,104,0.08) 0%, transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+  }
+
+  .skills-card {
+    background: rgba(255,255,255,0.02);
+    border: 0.5px solid rgba(196,160,80,0.15);
+    border-radius: var(--radius);
+    padding: 22px 28px;
+    backdrop-filter: blur(14px);
+    box-shadow: var(--shadow);
+  }
+
+  .skills-card p {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.8;
+    margin: 0;
+    font-weight: 300;
+  }
+</style>

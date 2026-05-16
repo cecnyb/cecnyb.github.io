@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ===== Variables ===== */
+:root {
+  /* Core palette */
+  --navy: rgb(32, 86, 122);
+  --deep-navy: rgba(21, 48, 72, 1);
+  --blue-text: rgba(50, 91, 122, 1);
+
+  --warm-beige: rgba(198, 185, 150, 1);
+  --champagne: rgba(220, 205, 163, 0.72);
+  --soft-champagne: rgba(235, 222, 185, 0.62);
+
+  --gold: rgba(150, 109, 17, 1);
+  --gold-soft: rgba(198, 171, 101, 0.78);
+  --gold-muted: rgba(150, 109, 17, 0.55);
+
+  /* Page */
+  --bg: rgba(151, 201, 233, 0.86);
+  --bg-2: rgba(63, 125, 156, 0.911);
+
+  /* Cards */
+  --card: rgba(193, 198, 198, 0.678);
+  --card-border: rgba(31, 70, 104, 0.38);
+  --card-border-subtle: rgba(255, 255, 255, 0.16);
+
+  /* Text */
+  --text: var(--deep-navy);
+  --text-muted: var(--blue-text);
+  --text-dim: rgba(50, 91, 122, 0.82);
+
+  /* Navigation */
+  --nav-bg: rgba(31, 70, 104, 0.96);
+  --nav-links: rgb(150, 106, 5);
+
+  /* Effects */
+  --shadow: 0 18px 42px rgba(21, 48, 72, 0.18);
+  --shadow-sm: 0 8px 22px rgba(21, 48, 72, 0.16);
+
+  --maxw: 1100px;
+  --radius: 22px;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* ===== Base ===== */
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--text);
+/*
+background:
+  radial-gradient(ellipse 70% 60% at 5% 50%, rgba(180, 100, 20, 0.709) 0%, transparent 55%),
+  radial-gradient(ellipse 50% 70% at 50% 20%, rgba(189, 144, 47, 0.592) 0%, transparent 50%),
+  radial-gradient(ellipse 60% 50% at 95% 40%, rgba(13, 55, 132, 0.5) 0%, transparent 55%),
+  linear-gradient(160deg, #1a0c05 0%, #120a08 40%, #0a4c79d7 100%);
+*/
+/*
+background:
+  radial-gradient(ellipse 70% 60% at 5% 80%, rgba(180,100,20,0.7) 0%, transparent 55%),
+  radial-gradient(ellipse 50% 50% at 50% 100%, rgba(140,60,10,0.4) 0%, transparent 50%),
+  radial-gradient(ellipse 60% 50% at 90% 20%, rgba(20,50,120,0.5) 0%, transparent 55%),
+  linear-gradient(160deg, #0d1525 0%, #120a08 55%, #1a0c05 100%);
+*/
+background:
+  radial-gradient(ellipse 40% 30% at 20% 90%, rgba(3, 83, 133, 0.9) 0%, transparent 60%),
+  radial-gradient(ellipse 30% 25% at 50% 95%, rgba(6, 98, 185, 0.801) 0%, transparent 55%),
+  radial-gradient(ellipse 35% 28% at 80% 88%, rgba(3, 75, 120, 0.664) 0%, transparent 58%),
+  radial-gradient(ellipse 25% 35% at 10% 70%, rgba(7, 103, 181, 0.534) 0%, transparent 50%),
+  radial-gradient(ellipse 28% 32% at 90% 65%, rgba(8, 92, 160, 0.65) 0%, transparent 52%),
+  radial-gradient(ellipse 35% 30% at 35% 75%, rgba(13, 97, 165, 0.6) 0%, transparent 55%),
+  radial-gradient(ellipse 30% 28% at 65% 80%, rgba(12, 109, 200, 0.6) 0%, transparent 52%),
+  radial-gradient(ellipse 50% 40% at 15% 20%, rgba(21,48,72,0.95) 0%, transparent 65%),
+  radial-gradient(ellipse 45% 38% at 80% 15%, rgba(12, 58, 99, 0.839) 0%, transparent 62%),
+  radial-gradient(ellipse 40% 35% at 50% 10%, rgba(25,58,90,0.85) 0%, transparent 60%),
+  radial-gradient(ellipse 30% 28% at 5% 40%, rgba(31,70,104,0.7) 0%, transparent 55%),
+  radial-gradient(ellipse 28% 30% at 95% 35%, rgba(25, 58, 87, 0.65) 0%, transparent 52%),
+  linear-gradient(180deg, #04080f 0%, #080904 100%);
+
+  background-attachment: fixed;
+}
+/* ===== Grain overlay for depth ===== */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Make sure content sits above grain */
+header, main, footer { position: relative; z-index: 1; }
+
+a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+/* ===== Header / Nav ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(236, 238, 239, 0.736);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 0.5px solid rgba(198,171,101,0.12);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+}
+
+nav {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 20px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--deep-navy);
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+
+.navlinks {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navlinks a {
+  font-size: 12px;
+  color: var(-deep-navy);
+  text-decoration: none;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.navlinks a:hover {
+  color: var(--gold-soft);
+  opacity: 1;
+}
+
+/* ===== Main ===== */
+main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  padding-bottom: 70px;
+}
+
+/* ===== Cards ===== */
+.hero-card,
+.sidebar-card,
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Optional taller hero card */
+.hero-card {
+  min-height: 260px;
+  padding: 48px 42px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  border-radius: 10px;
+  padding: 9px 14px;
+
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+
+  background: rgba(255, 255, 255, 0.10);
+  color: var(--navy);
+  border: 1px solid rgba(31, 70, 104, 0.16);
+
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  color: var(--gold);
+  border-color: rgba(150, 109, 17, 0.32);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.btn-primary {
+  background: #dec585c0;
+  color: var(--navy);
+  border: 1px solid rgba(150, 109, 17, 0.28);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: rgba(198, 171, 101, 0.92);
+  color: var(--deep-navy);
+  border-color: rgba(150, 109, 17, 0.45);
+}
+
+.btn-project1 {
+  background: #b8d0dfc0;
+  color: var(--navy);
+  border: 1px solid #84a8bea1;
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+}
+
+.btn-project1:hover {
+  background: #b8d0df70;
+  color: var(--deep-navy);
+  border-color: rgba(17, 99, 150, 0.45);
+}
+
+.btn-project2 {
+  background: #0c4577d8;
+  color:  rgb(106, 176, 196);
+  border: 1px solid rgba(43, 107, 150, 0.767);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+}
+
+.btn-project2:hover {
+  background: #0c627770;
+  color:  rgba(174, 212, 218, 0.596);
+  border-color: rgba(17, 99, 150, 0.45);
+}
+
+
+.open-skincare-demo {
+  background: #0c4577d8;
+  color:  rgb(106, 176, 196);
+  border: 1px solid rgba(43, 107, 150, 0.767);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+}
+
+.open-skincare-demo:hover {
+  background: #0c627770;
+  color:  rgba(174, 212, 218, 0.596);
+  border-color: rgba(17, 99, 150, 0.45);
+}
+/* ===== Section label ===== */
+.section-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+/* ===== Typography helpers ===== */
+h1,
+h2,
+h3 {
+  color: var(--gold);
+}
+
+p {
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ===== Footer ===== */
+footer {
+  position: fixed;
+  bottom: 7px;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 0.5px solid var(--card-border, #ddd);
+  color: rgba(255,255,255,0.4);
+}
+
+.footwrap {
+  display: flex;
+  align-items: center;
+  padding: 14px 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footwrap a {
+  color: rgba(200,160,80,0.7);
+}

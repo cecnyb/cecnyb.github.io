@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="CV">
+  <div class="hero-wrap">
+    <div class="glow"></div>
+
+    <p class="section-label">Resume</p>
+    <h1>CV</h1>
+    <p class="subtitle">Download or preview my resume below.</p>
+
+    <section class="cv-card">
+      <div class="links">
+        <a class="btn btn-primary" href="https://cecnyb.github.io/documents/Resume.pdf" download rel="noopener">Download Resume</a>
+        <a class="btn" href="mailto:cecilia.nyberg@hotmail.se">Contact Me</a>
+      </div>
+
+      <div class="resume-frame">
+        <iframe
+          src="https://cecnyb.github.io/documents/Resume.pdf#view=FitH&toolbar=0&navpanes=0&scrollbar=0"
+          title="Resume preview"
+        ></iframe>
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<style>
+  .glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(150,109,17,0.08) 0%, transparent 65%);
+    top: -100px;
+    right: -60px;
+    pointer-events: none;
+  }
+  .hero-wrap { position: relative; }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 400;
+    color: rgba(255,254,252,0.8);
+    margin: 0 0 8px;
+    letter-spacing: 0.3px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    margin: 0 0 28px;
+    font-weight: 300;
+  }
+
+  .cv-card {
+    background: rgba(255,255,255,0.025);
+    border: 0.5px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow), inset 0 1px 0 rgba(196,160,80,0.05);
+    backdrop-filter: blur(14px);
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .resume-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 8.5 / 11;
+    border: 0.5px solid rgba(196,160,80,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  }
+
+  .resume-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>

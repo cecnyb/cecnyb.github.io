@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} - Cecilia Nyberg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="brand">Cecilia Nyberg</div>
+        <ul class="navlinks">
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/additional">Additional</a></li>
+          <li><a href="/cv">CV</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="footwrap">
+        <span>Contact: <a href="mailto:cecilia.nyberg@hotmail.se">cecilia.nyberg@hotmail.se</a></span>
+        <span style="margin-left:auto; color:#9aa4b2">© 2025 Cecilia Nyberg</span>
+      </div>
+    </footer>
+  </body>
+</html>

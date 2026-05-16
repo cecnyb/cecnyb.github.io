@@ -1,0 +1,758 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Projects">
+
+  <div class="hero-wrap">
+    <div class="glow"></div>
+
+
+    <!-- ===== Carousel ===== -->
+    <div class="carousel-wrap">
+    <p class="section-label">Portfolio</p>
+    <h1>Selected Projects</h1>
+    <section class="carousel" aria-label="Featured projects">
+      <div class="slides" id="slides">
+
+        <article class="slide" aria-roledescription="slide">
+          <div class="slide-inner">
+            <div class="slide-text">
+              <h2>Master's Thesis: Learnable Dynamic Voltage Optimization in Radios</h2>
+              <p>My MSc thesis at Ericsson and Chalmers focused on predicting and adapting 5G radio power consumption using machine learning. The goal was to minimize energy usage without degrading network performance.</p>
+              <div class="slide-cta">
+                <a class="btn btn-project1" href="https://cecnyb.github.io/articles/MastersThesis_DynamicVoltageOptimization.pdf" target="_blank" rel="noopener">Read Thesis</a>
+              </div>
+            </div>
+            <div class="slide-art" style="--bg-img: url('/assets/mastersthesis.jpg');" role="img" aria-label="Master's Thesis"></div>
+          </div>
+        </article>
+
+        <article class="slide" aria-roledescription="slide">
+          <div class="slide-inner">
+            <div class="slide-text">
+              <h2>Bachelor's Thesis: Accessible Board Game Playing</h2>
+              <p>My BSc thesis focused on making board games more accessible for people with visual impairment. We developed a camera + image recognition system that converted physical cards into a digital hand, tested on Catan with high recognition accuracy.</p>
+              <div class="slide-cta">
+                <a class="btn btn-project1" href="https://cecnyb.github.io/articles/AccessibleCardPresentationInBoardGames.pdf" target="_blank" rel="noopener">Read Report</a>
+                <a class="btn btn-project2" href="https://drive.google.com/file/d/1wVrZ3TUVwXZCaCIZuLXTU6MWxHNr-Nfm/view?usp=share_link" target="_blank" rel="noopener">Watch Video</a>
+              </div>
+            </div>
+            <div class="slide-art" style="--bg-img: url('/assets/catan3.jpg');" role="img" aria-label="Bachelor's Thesis"></div>
+          </div>
+        </article>
+
+        <article class="slide" aria-roledescription="slide">
+          <div class="slide-inner">
+            <div class="slide-text">
+              <h2>LLM Assistant for Skincare Web Application</h2>
+              <p>Developed a language model-based assistant for a skincare web application, integrated with product data to provide personalized recommendations. Runs Llama 3 locally through Ollama with simple memory functionality.</p>
+              <div class="slide-cta">
+                <a class="btn btn-project1" href="https://github.com/cecnyb/ai-skincare-shopping-assistant" target="_blank" rel="noopener">View on GitHub</a>
+                <button class="btn open-skincare-demo" type="button">Demo Video</button>
+              </div>
+            </div>
+            <div class="slide-art" style="--bg-img: url('/assets/skincareAssistant.png');" role="img" aria-label="LLM Skincare Assistant"></div>
+          </div>
+        </article>
+
+        <article class="slide" aria-roledescription="slide">
+          <div class="slide-inner">
+            <div class="slide-text">
+              <h2>Sparse Matrix Optimization with Meta-Learning</h2>
+              <p>Extends WACO with meta-learning to adapt across hardware with minimal data. On 300 samples from a new machine, our meta-trained model outperformed the original WACO.</p>
+              <div class="slide-cta">
+                <a class="btn btn-project1" href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM" target="_blank" rel="noopener">View on GitHub</a>
+                <a class="btn btn-project2" href="https://cecnyb.github.io/articles/WACO_WITH_META_LEARNING.pdf" target="_blank" rel="noopener">Read Article</a>
+              </div>
+            </div>
+            <div class="slide-art" style="--bg-img: url('/assets/WACO.png');" role="img" aria-label="Sparse Matrix Optimization"></div>
+          </div>
+        </article>
+
+        <article class="slide" aria-roledescription="slide">
+          <div class="slide-inner">
+            <div class="slide-text">
+              <h2>Detection of Melanoma in Images</h2>
+              <p>Transfer learning with ConvNeXT for dermoscopy images. Best model reached 0.88 accuracy on the test set.</p>
+              <div class="slide-cta">
+                <a class="btn btn-project1" href="https://github.com/cecnyb/Melanoma_detection.git" target="_blank" rel="noopener">View on GitHub</a>
+                <a class="btn btn-project2" href="https://cecnyb.github.io/articles/Melanoma_detection.pdf" target="_blank" rel="noopener">Read Article</a>
+              </div>
+            </div>
+            <div class="slide-art" style="--bg-img: url('/assets/melanoma.png');" role="img" aria-label="Melanoma Detection"></div>
+          </div>
+        </article>
+
+        <article class="slide" aria-roledescription="slide">
+          <div class="slide-inner">
+            <div class="slide-text">
+              <h2>Advanced RAG for Financial QA</h2>
+              <p>Built on the ARKMan architecture with hybrid search, reasoning chains, and query decomposition using FinQA data.</p>
+              <div class="slide-cta">
+                <a class="btn btn-project1" href="https://github.com/cecnyb/Advanced_RAG_Financial_QA.git" target="_blank" rel="noopener">View on GitHub</a>
+                <a class="btn btn-project2" href="https://cecnyb.github.io/articles/Final_Project_Prompt_Eng.pdf" target="_blank" rel="noopener">Read Report</a>
+              </div>
+            </div>
+            <div class="slide-art" style="--bg-img: url('/assets/ARKMan.png');" role="img" aria-label="Advanced RAG Financial QA"></div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="carousel-controls" aria-hidden="false">
+        <button class="control" id="prev" aria-label="Previous slide">&#9664;</button>
+        <button class="control" id="next" aria-label="Next slide">&#9654;</button>
+      </div>
+      <div class="dots" role="tablist" aria-label="Choose slide">
+        <button class="dot" role="tab" aria-selected="true" aria-current="true"></button>
+        <button class="dot" role="tab" aria-selected="false"></button>
+        <button class="dot" role="tab" aria-selected="false"></button>
+        <button class="dot" role="tab" aria-selected="false"></button>
+        <button class="dot" role="tab" aria-selected="false"></button>
+        <button class="dot" role="tab" aria-selected="false"></button>
+      </div>
+    </section>
+  </div>
+
+    <!-- ===== Projects + Sidebar ===== -->
+    <div class="projects-wrap">
+      <nav class="projects-nav" aria-label="Project navigation">
+        <ul>
+          <li><a href="#proj-masters">MSc Thesis</a></li>
+          <li><a href="#proj-bachelors">BSc Thesis</a></li>
+          <li><a href="#proj-skincare">LLM Skincare</a></li>
+          <li><a href="#proj-waco">Sparse Matrix</a></li>
+          <li><a href="#proj-melanoma">Melanoma</a></li>
+          <li><a href="#proj-rag">RAG Llama-2</a></li>
+          <li><a href="#proj-finrag">Financial RAG</a></li>
+          <li><a href="#proj-lda">Topic Modeling</a></li>
+          <li><a href="#proj-trees">Tree Classification</a></li>
+          <li><a href="#proj-energy">Energy Optimization</a></li>
+          <li><a href="#proj-lora">LoRA vs FE</a></li>
+          <li><a href="#proj-covid">COVID Comments</a></li>
+          <li><a href="#proj-ttt">Tic-Tac-Toe RL</a></li>
+          <li><a href="#proj-netflix">Netflix Recs</a></li>
+          <li><a href="#proj-ngram">N-Gram Nobel</a></li>
+          <li><a href="#proj-ibm">IBM Translation</a></li>
+        </ul>
+      </nav>
+
+      <section class="projects-list">
+
+      <article class="project-card" id="proj-masters">
+        <p class="section-label">MSc Thesis</p>
+        <h3>Master's Thesis: Dynamic Voltage Optimization in Radios</h3>
+        <p>Combined classification and regression models with traffic-aware thresholds to reduce power consumption while maintaining performance. Included explainability using SHAP values.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://cecnyb.github.io/articles/MastersThesis_DynamicVoltageOptimization.pdf" target="_blank" rel="noopener">Read Thesis</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-bachelors">
+        <p class="section-label">BSc Thesis</p>
+        <h3>Bachelor's Thesis: Accessible Board Game Playing</h3>
+        <p>Making board games more accessible for people with visual impairment via camera + image recognition, converting physical cards into a digital hand. Tested on Catan with high accuracy.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://cecnyb.github.io/articles/AccessibleCardPresentationInBoardGames.pdf" target="_blank" rel="noopener">Report</a>
+          <a class="btn btn-project2" href="https://drive.google.com/file/d/1wVrZ3TUVwXZCaCIZuLXTU6MWxHNr-Nfm/view?usp=share_link" target="_blank" rel="noopener">Video</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-skincare">
+        <p class="section-label">LLM Application</p>
+        <h3>LLM Assistant for Skincare Web Application</h3>
+        <p>Skincare web app with an integrated LLM assistant running Llama 3 locally through Ollama, with simple memory functionality and a REST API connecting three components.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://github.com/cecnyb/ai-skincare-shopping-assistant" target="_blank" rel="noopener">View on GitHub</a>
+          <button class="btn open-skincare-demo" type="button">Demo Video</button>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-waco">
+        <p class="section-label">Meta-Learning</p>
+        <h3>Sparse Matrix Optimization with Meta-Learning</h3>
+        <p>Extends WACO with meta-learning to adapt across hardware with minimal data. On 300 samples from a new machine, our meta-trained model outperformed the original WACO.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://github.com/cecnyb/WACO_Meta_Learning_SpMM" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-project2" href="https://cecnyb.github.io/articles/WACO_WITH_META_LEARNING.pdf" target="_blank" rel="noopener">Read Article</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-melanoma">
+        <p class="section-label">Computer Vision</p>
+        <h3>Detection of Melanoma in Images</h3>
+        <p>Transfer learning with ConvNeXT for dermoscopy images. Best model reached 0.88 accuracy on the test set.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://github.com/cecnyb/Melanoma_detection.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-project2" href="https://cecnyb.github.io/articles/Melanoma_detection.pdf" target="_blank" rel="noopener">Read Article</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-rag">
+        <p class="section-label">RAG</p>
+        <h3>Question Answering RAG with Llama-2 and Mistral</h3>
+        <p>RAG pipeline using Pinecone vector DB. Best config: e5-base + Mistral, beating GPT-3.5-turbo on this dataset.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://github.com/rikardradovac/RAG.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-project2" href="https://cecnyb.github.io/articles/RAG_mistral_llama2.pdf" target="_blank" rel="noopener">Read Article</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-finrag">
+        <p class="section-label">RAG</p>
+        <h3>Advanced RAG for Financial QA</h3>
+        <p>Financial QA using ARKMan, hybrid search, chain-of-thought, and query decomposition on the FinQA dataset.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://github.com/cecnyb/Advanced_RAG_Financial_QA.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-project2" href="https://cecnyb.github.io/articles/Final_Project_Prompt_Eng.pdf" target="_blank" rel="noopener">Group Report</a>
+          <a class="btn btn-project2" href="https://drive.google.com/file/d/10m02d3GYGIeA7wRREcrvoYSSJ7rRpePl/view?usp=sharing" target="_blank" rel="noopener">Group Video</a>
+          <a class="btn btn-project2" href="https://drive.google.com/file/d/1-V-PDJY2puYrXNohVTKTjC0wY-SCairb/view?usp=sharing" target="_blank" rel="noopener">Individual Video</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-lda">
+        <p class="section-label">NLP</p>
+        <h3>Topic Modeling Using LDA with Collapsed Gibbs Sampling</h3>
+        <p>3000 docs from 20 Newsgroups. Best coherence with 10 topics and α = β = 0.1.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://github.com/cecnyb/Topic_modeling_LDA.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-project2" href="https://cecnyb.github.io/articles/Topic_modeling.pdf" target="_blank" rel="noopener">Read Article</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-trees">
+        <p class="section-label">Computer Vision</p>
+        <h3>Image Classification of Trees from Bark</h3>
+        <p>CNN for 12 species from bark images. Ablation study highlights: residuals, normalization, batch norm. Added OOD vs ID task (100% on that split).</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://github.com/cecnyb/TreeClassification.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-project2" href="https://cecnyb.github.io/articles/ImageClassificationTrees.pdf" target="_blank" rel="noopener">Read Article</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-energy">
+        <p class="section-label">Optimization</p>
+        <h3>Non-Linear Energy Optimization in Network</h3>
+        <p>11-node grid model minimizing generation cost while meeting demand. Best found cost: 186.29 SEK.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://cecnyb.github.io/articles/Planning_of_electricity_production_and_transmission-1.pdf" target="_blank" rel="noopener">Read Article</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-lora">
+        <p class="section-label">Fine-tuning</p>
+        <h3>LoRA vs Feature Extraction</h3>
+        <p>Comparing LoRA with feature extraction for task adaptation. LoRA achieved Acc/F1 ≈ 0.93 vs 0.81.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://github.com/cecnyb/Comparsion_LoRA_FT.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-project2" href="https://cecnyb.github.io/articles/LoRA.pdf" target="_blank" rel="noopener">Read Report</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-covid">
+        <p class="section-label">NLP</p>
+        <h3>Classifying Pro/Anti COVID-19 Vaccine Comments</h3>
+        <p>Best baseline: Logistic Regression + TF-IDF (Acc 0.89) on annotated social media comments.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://github.com/cecnyb/Covid_comment_classification.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-project2" href="https://cecnyb.github.io/articles/Document_classifier_covid.pdf" target="_blank" rel="noopener">Read Report</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-ttt">
+        <p class="section-label">Reinforcement Learning</p>
+        <h3>Reinforcement Learning for Tic-Tac-Toe</h3>
+        <p>MCTS with UCT. Win rate: 0.86 vs random; 0.83 vs blocking strategy.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://github.com/cecnyb/RL_tic_tac_toe.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-project2" href="https://cecnyb.github.io/articles/annotated-Module6Group60-1.pdf" target="_blank" rel="noopener">Read Report</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-netflix">
+        <p class="section-label">Recommendation</p>
+        <h3>Recommendation System for Netflix Movies</h3>
+        <p>Hybrid preferences using prior ratings, genres, and similar users.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://cecnyb.github.io/articles/annotated-DAT410__Assignment_2.pdf" target="_blank" rel="noopener">Read Report</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-ngram">
+        <p class="section-label">NLP</p>
+        <h3>N-Gram Model: Nobel Prize Motivations</h3>
+        <p>Deterministic bigram per category achieved highest semantic similarity (0.56) and strong BLEU on this dataset.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://github.com/cecnyb/Nobel_prize_winner_motivations.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-project2" href="https://cecnyb.github.io/articles/annotated-Module8Group60.pdf" target="_blank" rel="noopener">Read Report</a>
+        </div>
+      </article>
+
+      <article class="project-card" id="proj-ibm">
+        <p class="section-label">NLP</p>
+        <h3>IBM Translation Model</h3>
+        <p>IBM Model 1 on parallel EN-SV-DE-FR corpus.</p>
+        <div class="divider"></div>
+        <div class="links">
+          <a class="btn btn-project1" href="https://github.com/cecnyb/IBM_translation_model.git" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-project2" href="https://cecnyb.github.io/articles/annotated-Module5Goup60.pdf" target="_blank" rel="noopener">Read Report</a>
+        </div>
+      </article>
+
+    </section>
+  </div>
+
+  <!-- ===== Video Modal ===== -->
+  <div class="video-modal" id="skincare-demo-modal" aria-hidden="true">
+    <div class="video-modal-backdrop" id="close-skincare-demo-backdrop"></div>
+    <div class="video-modal-content" role="dialog" aria-modal="true" aria-label="Skincare assistant demo video">
+      <button class="video-modal-close" type="button" id="close-skincare-demo">×</button>
+      <video id="skincare-demo-video" controls preload="metadata">
+        <source src="/assets/AgentRecommendation.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  
+
+</Layout>
+
+<style>
+  .glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(150,109,17,0.08) 0%, transparent 65%);
+    top: -100px;
+    right: -60px;
+    pointer-events: none;
+  }
+  .hero-wrap { position: relative; }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 400;
+    color: rgba(255, 254, 252, 0.8);
+    margin: 0 0 32px;
+    letter-spacing: 0.3px;
+  }
+
+  /* ===== Carousel ===== */
+  .carousel-wrap {
+    padding-left: 140px;
+  }
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    border: 0.5px solid var(--card-border);
+    background: rgba(188, 220, 242, 0.26);
+    backdrop-filter: blur(14px);
+    box-shadow: var(--shadow), inset 0 1px 0 rgba(196,160,80,0.06);
+  }
+  .slides {
+    display: flex;
+    transition: transform .6s cubic-bezier(.2,.7,.1,1);
+    will-change: transform;
+  }
+  .slide {
+    min-width: 100%;
+    padding: 36px 32px;
+  }
+  .slide-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 28px;
+    align-items: center;
+  }
+  .slide-text h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(20px, 2vw, 28px);
+    font-weight: 400;
+    color: rgba(255, 254, 252, 0.8);
+    margin: 0 0 12px;
+  }
+  .slide-text p {
+    color: rgba(255,255,255,0.55);
+    font-size: 13.5px;
+    line-height: 1.8;
+    margin: 0 0 20px;
+    font-weight: 300;
+  }
+  .slide-cta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .slide-art {
+    height: 260px;
+    border-radius: 14px;
+    border: 0.5px solid rgba(196,160,80,0.2);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    background-image:
+      var(--bg-img),
+      linear-gradient(135deg, rgba(21,48,72,0.8), rgba(10,10,10,0.9));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .control {
+    pointer-events: auto;
+    background: rgba(0,0,0,0.3);
+    border: 0.5px solid rgba(196,160,80,0.25);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 12px;
+    cursor: pointer;
+    color: rgba(196,160,80,0.8);
+    transition: background 0.2s;
+  }
+  .control:hover { background: rgba(0,0,0,0.5); }
+  .carousel-controls {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+  .dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: 0.5px solid rgba(196,160,80,0.2);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .dot[aria-current="true"] {
+    background: var(--gold-soft);
+    border-color: var(--gold);
+  }
+
+  /* ====Project Nav === */
+  /* ===== Projects layout with sidebar ===== */
+.projects-wrap {
+  margin-top: 60px;
+}
+.projects-nav {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  width: 180px;
+  padding: 20px 16px;
+  background: rgba(255,255,255,0.02);
+  border: 0.5px solid rgba(196,160,80,0.15);
+  border-radius: var(--radius);
+  backdrop-filter: blur(14px);
+  z-index: 10;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+.projects-nav .section-label {
+  margin-bottom: 14px;
+}
+
+.projects-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.projects-nav ul li a {
+  display: block;
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+  transition: color 0.2s, background 0.2s;
+  line-height: 1.4;
+}
+
+.projects-nav ul li a:hover {
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.04);
+}
+
+.projects-nav ul li a.active {
+  color: var(--gold-soft);
+  background: rgba(150,109,17,0.12);
+  border-left: 2px solid var(--gold-soft);
+  padding-left: 8px;
+}
+
+.projects-list {
+  display: grid;
+  gap: 20px;
+  padding-left: 210px;
+}
+
+@media (max-width: 860px) {
+  .projects-wrap {
+    grid-template-columns: 1fr;
+  }
+  .projects-nav {
+    display: none;
+  }
+}
+
+  /* ===== Projects List ===== */
+  .projects-list {
+  display: grid;
+  gap: 0px;
+  padding-left: 210px;
+  padding-top: 100px;
+}
+.project-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 28px 28px;
+  box-shadow: none;
+  backdrop-filter: none;
+  margin-bottom: 60px;
+  scroll-margin-top: 40vh;
+
+
+  /* Default state — pushed back */
+  opacity: 0.35;
+  transform: scale(0.95) translateY(8px);
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s;
+  transform-origin: center center;
+}
+
+.project-card.in-focus {
+  opacity: 1;
+  transform: scale(1.02) translateY(0);
+}
+
+.project-card.out-focus {
+  opacity: 0.35;
+  transform: scale(0.95) translateY(8px);
+}
+
+.project-card h3 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  margin: 0 0 20px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+}
+
+.project-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.42);
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 300;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+.project-card:hover {
+  border-bottom-color: rgba(196,160,80,0.25);
+}
+  .divider {
+    height: 0.5px;
+    background: rgba(196,160,80,0.12);
+    margin: 16px 0;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ===== Video Modal ===== */
+  .video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .video-modal.is-open { display: flex; }
+  .video-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+  }
+  .video-modal-content {
+    position: relative;
+    z-index: 1;
+    width: min(900px, 95vw);
+    background: rgba(15,14,12,0.95);
+    border: 0.5px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .video-modal-content video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+  .video-modal-close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 999px;
+    background: var(--gold-soft);
+    color: var(--deep-navy);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  @media (max-width: 860px) {
+    .slide-inner { grid-template-columns: 1fr; }
+    .slide-art { height: 160px; }
+  }
+</style>
+
+<script>
+  (function(){
+    const slides = document.getElementById('slides');
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+    const total = slides.children.length;
+    let index = 0;
+    let auto = null;
+
+    function setIndex(i){
+      index = (i + total) % total;
+      slides.style.transform = `translateX(${-index * 100}%)`;
+      dots.forEach((d, k) => {
+        d.setAttribute('aria-current', k === index ? 'true' : 'false');
+        d.setAttribute('aria-selected', k === index ? 'true' : 'false');
+      });
+    }
+
+    function startAuto(){
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      stopAuto();
+      auto = setInterval(() => setIndex(index + 1), 2900);
+    }
+    function stopAuto(){ if(auto) clearInterval(auto); }
+
+    prev.addEventListener('click', () => { setIndex(index - 1); startAuto(); });
+    next.addEventListener('click', () => { setIndex(index + 1); startAuto(); });
+    dots.forEach((d, k) => d.addEventListener('click', () => { setIndex(k); startAuto(); }));
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'ArrowLeft') { setIndex(index - 1); startAuto(); }
+      if(e.key === 'ArrowRight') { setIndex(index + 1); startAuto(); }
+    });
+
+    let startX = null;
+    slides.addEventListener('touchstart', e => { startX = e.touches[0].clientX; stopAuto(); }, {passive: true});
+    slides.addEventListener('touchend', e => {
+      if(startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      startX = null;
+      if(Math.abs(dx) > 40) setIndex(index + (dx < 0 ? 1 : -1));
+      startAuto();
+    });
+
+    document.querySelector('.carousel').addEventListener('mouseenter', stopAuto);
+    document.querySelector('.carousel').addEventListener('mouseleave', startAuto);
+
+    setIndex(0);
+    startAuto();
+
+    // Video modal
+    const openDemoButtons = document.querySelectorAll('.open-skincare-demo');
+    const modal = document.getElementById('skincare-demo-modal');
+    const closeDemoButton = document.getElementById('close-skincare-demo');
+    const closeBackdrop = document.getElementById('close-skincare-demo-backdrop');
+    const video = document.getElementById('skincare-demo-video');
+
+    function openModal() { modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); }
+    function closeModal() { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); video.pause(); video.currentTime = 0; }
+
+    openDemoButtons.forEach(b => b.addEventListener('click', openModal));
+    closeDemoButton.addEventListener('click', closeModal);
+    closeBackdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if(e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+  })();
+
+  // Scroll spy for sidebar
+const navLinks = document.querySelectorAll('.projects-nav a');
+const cards = document.querySelectorAll('.project-card');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + entry.target.id) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+
+cards.forEach(card => observer.observe(card));
+
+// Scroll reveal for project cards
+// 3D scroll focus effect
+const focusObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-focus');
+      entry.target.classList.remove('out-focus');
+    } else {
+      entry.target.classList.remove('in-focus');
+      entry.target.classList.add('out-focus');
+    }
+  });
+}, { rootMargin: '-40% 0px -20% 0px', threshold: 0 });
+
+cards.forEach(card => focusObserver.observe(card));
+</script>
