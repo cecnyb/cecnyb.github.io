@@ -19,58 +19,62 @@ import Layout from '../layouts/Layout.astro';
       <div class="hero-card">
         <img src="/images/name.png" alt="Cecilia Nyberg" class="profile-pic" />
         <p class="name-tag">Cecilia<br>Nyberg</p>
-        <p class="subtitle">Data Science & AI</p>
+        <p class="subtitle">AI Research & Engineering</p>
         <div class="cta-wrap">
           <a class="btn btn-primary" href="/projects">View Projects</a>
           <a class="btn" href="https://www.linkedin.com/in/cecilianyberg/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn" href="https://github.com/cecnyb" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="mailto:cecilia.nyberg@hotmail.se">Email</a>
+          <a class="btn" href="mailto:cecilia.ae.nyberg@gmail.com">Email</a>
         </div>
 		<hr class="divider" />
           <p class="section-label">Get in touch</p>
           <ul class="contact-links">
-            <li><a class="chip accent" href="mailto:cecilia.nyberg@hotmail.se">cecilia.nyberg@hotmail.se</a></li>
-            <li><a class="chip accent" href="mailto:1cecnyb@snu.ac.kr">cecnyb99@gmail.com</a></li>
+            <li><a class="chip accent" href="mailto:cecilia.ae.nyberg@gmail.com">cecilia.ae.nyberg@gmail.com</a></li>
 
           </ul>
       </div>
 
       <article class="about">
-      <div class="about-text">
-        <p class="section-label">About me</p>
-        <h2>AI Engineer & LLM Researcher</h2>
-
-        <p>
-          Hello! I'm Cecilia Nyberg, an AI Engineer and researcher focused on LLM agents,
-          applied deep learning, and AI systems.
-        </p>
-
-        <p>
-          My recent work focuses on tool-using LLMs, including fine-tuning models for
-          multi-step tool use, improving robustness to prompt-structure changes, and
-          building agent systems with reasoning, retrieval, memory, and function calling.
-        </p>
-
-        <p>
-          I completed my Master's thesis at Ericsson, where I applied machine learning and
-          time-series forecasting to optimize energy usage in radio units. A manuscript based
-          on this work is currently under minor revision.
-        </p>
-
-        <p>
-          I am currently a visiting researcher at the Deep Learning Lab at Seoul National
-          University, where my research focuses on LLM agents, tool learning, and applied AI
-          systems. My current work includes a paper on prompt-robust tool learning for
-          LLM-based ship inspection workflows.
-        </p>
-
-        <p>
-          Feel free to explore my projects and experience on this site.
-        </p>
-      </div>
-
       <div class="about-photo-col">
         <img src="/images/Ericsson2.jpg" alt="Cecilia Nyberg" class="about-photo" />
+      </div>
+
+      <div class="about-text">
+        <p class="section-label">About me</p>
+        <h2>AI Engineer & Researcher</h2>
+
+        <p>
+          Hello! I'm Cecilia Nyberg, an AI researcher and engineer with experience in
+          LLMs, agent systems and deep learning.
+        </p>
+
+       <p>
+          As a visiting researcher at the Deep Learning Lab at Seoul National University,
+          I have worked across several areas of AI. My work on the quantized model
+          BitNet b1.58 involved building a 1-bit LLM agent system, analyzing its
+          limitations in long-context and multi-step tasks, and using continued
+          pretraining and supervised fine-tuning to improve Korean language capability.
+          I later shifted toward LLM tool-learning, studying why smaller models struggle
+          with multi-step, domain-specific tool use. This led to a paper on
+          prompt-robust tool learning for LLM-based ship inspection workflows using
+          supervised fine-tuning and prompt augmentation. I am also working on modular
+          CNN training strategies for image recognition, evaluated across six datasets
+          and connected to early-exit network architectures.
+        </p>
+
+        <p>
+          On the applied side, I work as an AI Engineer and CPO at LLM Core AI, where I
+          built a full-stack skincare assistant with a LangGraph-based agent
+          architecture, memory, retrieval, streaming responses, Shopify integration, and
+          deployment on Google Cloud Run.
+        </p>
+
+        <p>
+          I completed my Master's thesis at Ericsson in 2025, applying machine learning
+          and time-series forecasting to optimize energy usage in radio units. A
+          manuscript based on this work is currently under minor revision at IEEE
+          Transactions on Machine Learning in Communications and Networking.
+        </p>
       </div>
     </article>
 
@@ -83,33 +87,30 @@ import Layout from '../layouts/Layout.astro';
         <div class="interest-card">
           <h3>LLM Agents & Tool Use</h3>
           <p>
-            Fine-tuning and evaluating language models for multi-step tool use,
-            function calling, and structured decision-making workflows.
+            Improving language models for multi-step tool use and structured decision-making workflows.
           </p>
         </div>
 
         <div class="interest-card">
           <h3>Efficient and Sustainable AI</h3>
           <p>
-            Exploring methods that improve model performance with limited labeled data or constrained deployment settings,
-            using approaches such as quantization, transfer learning and data-efficient training strategies.
+            Improving model performance with limited labeled data or constrained deployment settings,
+            trough methods such as quantization, transfer learning and data-efficient training strategies.
           </p>
         </div>
 
         <div class="interest-card">
           <h3>Applied Deep Learning</h3>
           <p>
-            Designing machine-learning systems for real-world applications, including
-            time-series forecasting, multiared bandits, and operational decision support.
+            Designing machine-learning systems for real-world applications, 
+            including operational decision support.
           </p>
         </div>
 
         <div class="interest-card">
-          <h3>AI for Health Care & Image Recognition</h3>
+          <h3>Multimodel AI</h3>
           <p>
-            Interested in applying deep learning and LLM-based systems to healthcare-related
-            problems, including image recognition, workflow support
-            and interpretable decision support.
+            Interested in multimodal systems that combine medical image analysis and language models.
           </p>
         </div>
       </div>
@@ -128,8 +129,8 @@ import Layout from '../layouts/Layout.astro';
         <div class="timeline-date">Oct 2025 — Present</div>
         <div class="timeline-content">
           <h3>AI Engineer</h3>
-          <p class="timeline-org">LLM Core AI, Inc. · Full-time · Seoul, South Korea</p>
-          <p>LLM-based agentic automation systems. Agentic AI development and large language model engineering.</p>
+          <p class="timeline-org">LLM Core AI, Inc. · Part-time · Seoul, South Korea</p>
+          <p>LLM-based agentic systems.</p>
         </div>
       </div>
 
@@ -138,7 +139,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="timeline-content">
           <h3>Researcher</h3>
           <p class="timeline-org">Seoul National University · Seoul, South Korea</p>
-          <p>Research on efficient LLMs and intelligent agents using LangGraph and large language models.</p>
+          <p>Research on LLMs, tool-learning and quantization.</p>
         </div>
       </div>
 
@@ -174,7 +175,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="timeline-content">
           <h3>Master's Degree, Data Science and AI</h3>
           <p class="timeline-org">Chalmers University of Technology</p>
-          <p>PyTorch, image recognition, prompt engineering, meta-learning and more.</p>
+          <p>Image recognition, LLMs, medical AI.</p>
         </div>
       </div>
 
@@ -183,7 +184,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="timeline-content">
           <h3>Graduate Student, Data Science and AI</h3>
           <p class="timeline-org">Seoul National University</p>
-          <p>Graduate courses focused on LLMs, prompt engineering and machine learning techniques.</p>
+          <p>Graduate courses focused on LLMs, meta-learning and ML techniques.</p>
         </div>
       </div>
 
@@ -200,7 +201,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="timeline-content">
           <h3>Bachelor's Degree, Industrial Engineering and Management</h3>
           <p class="timeline-org">Chalmers University of Technology</p>
-          <p>Java, financial analysis and more.</p>
+          <p>Operations management, financial analysis, computer science track.</p>
         </div>
       </div>
 
@@ -345,18 +346,15 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* ===== Right about card ===== */
-  .about {
-    position: relative;
-    isolation: isolate;
-    background: transparent;
-    border: none;
-    padding: 48px 32px;
-    box-shadow: none;
-    display: grid;
-    grid-template-columns: 1fr 240px;
-    gap: 49px;
-    align-items: center;
-  }
+ .about {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+  border: none;
+  padding: 48px 32px;
+  box-shadow: none;
+  overflow: hidden; /* replaces grid */
+}
 
   /* Atmospheric glow behind the text */
   .about::before {
@@ -383,7 +381,7 @@ import Layout from '../layouts/Layout.astro';
 
   /* Section label above heading */
   .about-text .section-label {
-    margin-bottom: 8px;
+    margin-bottom: 3px;
   }
 
   .about-text p {
@@ -394,6 +392,7 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 350;
     /* This is what makes text feel like it floats */
     text-shadow: 0 2px 10px rgba(105, 98, 98, 0.87);
+    margin-bottom: 1rem;
   }
   .divider {
     border: none;
@@ -407,6 +406,8 @@ import Layout from '../layouts/Layout.astro';
     list-style: none;
     padding: 0;
     margin: 0;
+    justify-content: flex-start;
+    margin-left: -9px;
   }
   .chip {
     border: 0.5px solid rgba(255,255,255,0.08);
@@ -424,23 +425,28 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* ===== Photo inside about card ===== */
+
+
 .about-photo-col {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 0;
+  float: right;
+  width: 240px;
+  margin-left: 32px;
+  margin-top: -20px; /* move up */
 }
 
 .about-photo {
-  width: 110%;
+  width: 100%;
   height: 330px;
   object-fit: cover;
-  object-position: 0 0px;
   border-radius: 14px;
   border: 1px solid rgba(220, 205, 163, 0.32);
   box-shadow: 0 20px 44px rgba(21, 48, 72, 0.28);
   display: block;
+  margin-bottom: 32px;
+  margin-left: 32px;
+  
 }
+
 
  /* Interestes */
 .research-interests {
@@ -505,9 +511,9 @@ import Layout from '../layouts/Layout.astro';
 }
 
 .interest-card p {
-  font-size: 13px;
+  font-size: 13.2px;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(255, 255, 255, 0.74);
   margin: 0;
   font-weight: 300;
   text-shadow: 0 2px 10px rgba(0,0,0,0.5);
@@ -609,7 +615,7 @@ import Layout from '../layouts/Layout.astro';
 
 .timeline-content p {
   font-size: 13px;
-  color: rgba(255,255,255,0.42);
+  color: rgba(255, 255, 255, 0.69);
   line-height: 1.8;
   margin: 0;
   font-weight: 300;
