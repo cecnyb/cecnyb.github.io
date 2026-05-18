@@ -275,9 +275,10 @@ import Layout from '../layouts/Layout.astro';
 .bg-initials {
   position: fixed;
   bottom: 90px;
-  right: 27%;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-serif);
-  font-size: clamp(400px, 40vw, 700px);
+  font-size: clamp(220px, 40vw, 700px);
   font-weight: 700;
   color: transparent;
   -webkit-text-stroke: 1px rgba(212, 183, 86, 0.13);
@@ -286,6 +287,22 @@ import Layout from '../layouts/Layout.astro';
   pointer-events: none;
   user-select: none;
   z-index: 0;
+}
+
+@media (max-width: 600px) {
+  .bg-initials {
+    font-size: 180px;
+    bottom: -20px;
+    letter-spacing: -5px;
+  }
+}
+
+@media (max-width: 1100px) and (max-height: 400px) {
+  .bg-initials {
+    font-size: 150px;
+    bottom: -10px;
+    right: -10px;
+  }
 }
 
   .page-nav {
