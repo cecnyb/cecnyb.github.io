@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Home">
   <div class="hero-wrap">
+  <div class="bg-initials" aria-hidden="true">CN</div>
   <nav class="page-nav" aria-label="Page navigation">
   <ul>
     <li><a href="#about">About</a></li>
@@ -11,6 +12,7 @@ import Layout from '../layouts/Layout.astro';
     <li><a href="#experience">Work Experience</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#publications">Publications</a></li>
+    <li><a href="#skills">Skills</a></li>
   </ul>
 </nav>
     <div class="glow"></div>
@@ -226,6 +228,18 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
 
+  <!-- Skills -->
+  <div class="timeline-group" id="skills">
+    <p class="section-label">Technical Skills</p>
+    <h2>Skills</h2>
+    <div class="skills-card">
+      <p>
+        Python, PyTorch, TensorFlow/Keras, Hugging Face, LLM Fine-tuning, LoRA/SFT,
+        LLM Agents, Computer Vision, Meta-learning, FastAPI, React, Docker, Linux/Slurm.
+      </p>
+    </div>
+  </div>
+
 </section>
    
   </div>
@@ -243,13 +257,36 @@ import Layout from '../layouts/Layout.astro';
     right: -60px;
     pointer-events: none;
   }
-  .hero-wrap { position: relative; }
+  .hero-wrap {
+    position: relative;
+    padding-left: 200px; /* clears the 160px nav + its left offset */
+  }
+  @media (max-width: 1100px) {
+    .hero-wrap {
+      padding-left: 0;
+    }
+  }
   .hero {
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 24px;
     align-items: start;
   }
+.bg-initials {
+  position: fixed;
+  bottom: 90px;
+  right: 27%;
+  font-family: var(--font-serif);
+  font-size: clamp(400px, 40vw, 700px);
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(212, 183, 86, 0.16);
+  letter-spacing: -10px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
 
   .page-nav {
   position: fixed;
@@ -297,7 +334,7 @@ import Layout from '../layouts/Layout.astro';
   padding-left: 8px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .page-nav { display: none; }
 }
 
@@ -621,6 +658,23 @@ import Layout from '../layouts/Layout.astro';
   font-weight: 300;
 }
 
+.skills-card {
+  background: rgba(255,255,255,0.02);
+  border: 0.5px solid rgba(196,160,80,0.15);
+  border-radius: var(--radius);
+  padding: 22px 28px;
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+}
+
+.skills-card p {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 300;
+}
+
 @media (max-width: 600px) {
   .timeline-item {
     grid-template-columns: 1fr;
@@ -660,7 +714,7 @@ import Layout from '../layouts/Layout.astro';
   scroll-margin-top: 70px;
 }
 
-#research, #experience, #education, #publications {
+#research, #experience, #education, #publications, #skills {
   scroll-margin-top: 100px;
 }
 </style>
@@ -685,7 +739,7 @@ timelineItems.forEach(item => timelineObserver.observe(item));
 
 // Home page scroll spy
 const homeNavLinks = document.querySelectorAll('.page-nav a');
-const homeSections = document.querySelectorAll('#about, #research, #experience, #education, #publications');
+const homeSections = document.querySelectorAll('#about, #research, #experience, #education, #publications, #skills');
 
 let activeSection = null;
 
