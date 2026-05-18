@@ -65,10 +65,19 @@ import Layout from '../layouts/Layout.astro';
         </p>
 
         <p>
-          On the applied side, I work as an AI Engineer and CPO at LLM Core AI, where I
-          built a full-stack skincare assistant with a LangGraph-based agent
+          On the applied side, I work as an AI Engineer at
+          <a
+            href="https://llmcore.ai/en"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="company-link"
+          >
+            LLM Core AI
+          </a>
+          where I built a full-stack LLM assistant with a LangGraph-based agent
           architecture, memory, retrieval, streaming responses, Shopify integration, and
-          deployment on Google Cloud Run.
+          deployment on Google Cloud Run. I also developed an e-commerce automation
+          pipeline for AliExpress-to-Shopify product import, using REST/GraphQL APIs.
         </p>
 
         <p>
@@ -392,6 +401,17 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* ===== Right about card ===== */
+.company-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.company-link:hover {
+  color: rgba(75, 115, 138, 0.43);
+  text-decoration: underline;
+}
+
  .about {
   position: relative;
   isolation: isolate;
